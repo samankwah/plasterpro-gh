@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import { usePageMeta } from "../../../hooks/usePageMeta";
+import { PAGE_METADATA } from "../../../constants/pageMetadata";
 
 // Import local images
 import ceiling1 from "../../../assets/ceiling1.jpg";
@@ -23,6 +25,8 @@ import wwallangle from "../../../assets/wwallangle.jpg";
 import drywallscrews from "../../../assets/drywallscrews.jpg";
 
 const Showcase = () => {
+  usePageMeta(PAGE_METADATA.products.title, PAGE_METADATA.products.description);
+
   const [selectedItem, setSelectedItem] = useState(null);
   const [animateItems, setAnimateItems] = useState(false);
 

@@ -1,7 +1,11 @@
 import { Link } from "react-router-dom";
 import PageNotFound from "../assets/undraw_page_not_found.svg";
+import { usePageMeta } from "../hooks/usePageMeta";
+import { PAGE_METADATA } from "../constants/pageMetadata";
 
 const Error = () => {
+  usePageMeta(PAGE_METADATA.error404.title, PAGE_METADATA.error404.description);
+
   return (
     <>
       <section className=" grid place-items-center pt-20 mb-16">

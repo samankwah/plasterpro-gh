@@ -12,6 +12,8 @@ import {
   TrendingUp,
   Sparkles,
 } from "lucide-react";
+import { usePageMeta } from "../../../hooks/usePageMeta";
+import { PAGE_METADATA } from "../../../constants/pageMetadata";
 
 const Counter = ({ target, suffix, label, icon: Icon }) => {
   const [count, setCount] = useState(0);
@@ -56,6 +58,8 @@ const Counter = ({ target, suffix, label, icon: Icon }) => {
 };
 
 const AboutProduct = () => {
+  usePageMeta(PAGE_METADATA.services.title, PAGE_METADATA.services.description);
+
   const services = [
     {
       icon: <Wrench className="w-8 h-8" />,

@@ -9,6 +9,8 @@ import {
   Star,
   Eye,
 } from "lucide-react";
+import { usePageMeta } from "../../../hooks/usePageMeta";
+import { PAGE_METADATA } from "../../../constants/pageMetadata";
 
 // Import local images
 import ceiling1 from "../../../assets/ceiling1.jpg";
@@ -167,6 +169,8 @@ const QuickViewImageGallery = ({ product }) => {
 };
 
 const ProductCatalog = () => {
+  usePageMeta(PAGE_METADATA.productCatalog.title, PAGE_METADATA.productCatalog.description);
+
   const [searchQuery, setSearchQuery] = useState("");
   const [searchInput, setSearchInput] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("All");

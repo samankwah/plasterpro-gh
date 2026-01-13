@@ -1,8 +1,11 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { Link, useNavigate } from "react-router-dom";
+import { usePageMeta } from "../hooks/usePageMeta";
+import { PAGE_METADATA } from "../constants/pageMetadata";
 
 const ProjectsPage = () => {
+  usePageMeta(PAGE_METADATA.projects.title, PAGE_METADATA.projects.description);
   const [activeGalleryTab, setActiveGalleryTab] = useState("all");
   const [expandedCaseStudy, setExpandedCaseStudy] = useState(false);
   const [hoveredProject, setHoveredProject] = useState(null);

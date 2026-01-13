@@ -12,8 +12,11 @@ import {
   Wrench,
 } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import { usePageMeta } from "../hooks/usePageMeta";
+import { PAGE_METADATA } from "../constants/pageMetadata";
 
 const AboutInstallation = () => {
+  usePageMeta(PAGE_METADATA.installation.title, PAGE_METADATA.installation.description);
   const [openFaq, setOpenFaq] = useState(null);
   const navigate = useNavigate();
 

@@ -19,6 +19,8 @@ import {
   X,
   ThumbsUp,
 } from "lucide-react";
+import { usePageMeta } from "../../../hooks/usePageMeta";
+import { PAGE_METADATA } from "../../../constants/pageMetadata";
 
 // Enhanced blog data with more posts and content
 const blogPosts = [
@@ -207,6 +209,8 @@ const blogPosts = [
 
 // Main Blog List Component
 const BlogList = () => {
+  usePageMeta(PAGE_METADATA.blog.title, PAGE_METADATA.blog.description);
+
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [searchQuery, setSearchQuery] = useState("");
   const [sortBy, setSortBy] = useState("newest");

@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { Link, useParams, useNavigate } from "react-router-dom";
+import { usePageMeta } from "../hooks/usePageMeta";
+import { getDynamicProjectMeta, PAGE_METADATA } from "../constants/pageMetadata";
 
 const ProjectDetailsPage = () => {
   const { projectId } = useParams();
@@ -197,6 +199,13 @@ const ProjectDetailsPage = () => {
   };
 
   const project = projects[projectId];
+
+  // Set dynamic page metadata based on project
+  const meta = project
+    ? getDynamicProjectMeta(project)
+    : PAGE_METADATA.error404;
+
+  usePageMeta(meta.title, meta.description);
 
   if (!project) {
     return (

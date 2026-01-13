@@ -11,8 +11,11 @@ import {
   AlertCircle,
   Loader2,
 } from "lucide-react";
+import { usePageMeta } from "../../../hooks/usePageMeta";
+import { PAGE_METADATA } from "../../../constants/pageMetadata";
 
 function Contact() {
+  usePageMeta(PAGE_METADATA.contact.title, PAGE_METADATA.contact.description);
   const [formData, setFormData] = useState({
     name: "",
     email: "",

@@ -1,8 +1,11 @@
 import React, { useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import { Calendar, Clock, Video, X, CheckCircle, AlertCircle, Loader2 } from "lucide-react";
+import { usePageMeta } from "../hooks/usePageMeta";
+import { PAGE_METADATA } from "../constants/pageMetadata";
 
 const MeetingRequest = () => {
+  usePageMeta(PAGE_METADATA.meetingRequest.title, PAGE_METADATA.meetingRequest.description);
   const dialogRef = useRef(null);
 
   const [formData, setFormData] = useState({

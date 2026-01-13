@@ -2,8 +2,12 @@ import React from "react";
 // import CEO from "../../../assets/ceo.jpg";
 import { motion } from "framer-motion"; // Note: changed from react-motion to framer-motion
 import { Link } from "react-router-dom";
+import { usePageMeta } from "../../../hooks/usePageMeta";
+import { PAGE_METADATA } from "../../../constants/pageMetadata";
 
 const AboutInnovator = () => {
+  usePageMeta(PAGE_METADATA.aboutUs.title, PAGE_METADATA.aboutUs.description);
+
   return (
     <div className="bg-gradient-to-b from-white to-gray-50">
       {/* Hero Section */}

@@ -1,7 +1,10 @@
 import { useState } from "react";
 import { X } from "lucide-react"; // Close icon
+import { usePageMeta } from "../hooks/usePageMeta";
+import { PAGE_METADATA } from "../constants/pageMetadata";
 
 const ProductCard = ({ product }) => {
+  usePageMeta(PAGE_METADATA.productCard.title, PAGE_METADATA.productCard.description);
   const [isQuickViewOpen, setIsQuickViewOpen] = useState(false);
 
   // Function to open the Quick View modal
