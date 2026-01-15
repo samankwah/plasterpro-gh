@@ -12,15 +12,16 @@ import lighting1 from "../../../assets/lighting1.jpg";
 import lighting2 from "../../../assets/lighting2.jpg";
 import lighting3 from "../../../assets/lighting3.jpg";
 import lighting4 from "../../../assets/lighting4.jpg";
+import basement from "../../../assets/basement.jpeg";
 import roomdeco from "../../../assets/roomdeco.jpg";
 import roomdeco1 from "../../../assets/roomdeco1.jpg";
 import curtains from "../../../assets/curtains.jpg";
 import poptruck from "../../../assets/poptruck.jpg";
 import kitchenInterior from "../../../assets/kitchenInterior.jpg";
-import galvanisedprofiles from "../../../assets/galvanisedprofiles.jpg";
+import roomcurtains from "../../../assets/room curtains.jpeg";
 import pop1 from "../../../assets/pop1.jpg";
 import outdoorinetrior from "../../../assets/outdoorinetrior.jpg";
-import tappingscrew from "../../../assets/tappingscrew.jpg";
+import popwindow from "../../../assets/pop window.jpeg";
 import wwallangle from "../../../assets/wwallangle.jpg";
 import drywallscrews from "../../../assets/drywallscrews.jpg";
 
@@ -169,7 +170,7 @@ const Showcase = () => {
       title: "Hardware Installation Services",
       description:
         "Expert installation of various building hardware, including ceiling frames, wall brackets, and electrical fittings.",
-      images: [roomdeco1, roomdeco, curtains, tappingscrew],
+      images: [roomdeco1, roomdeco, curtains, popwindow],
       badge: "Premium",
     },
     {
@@ -190,7 +191,7 @@ const Showcase = () => {
       title: "Fiber Ceiling Boards",
       description:
         "Compressed mineral fiber boards providing acoustic insulation, fire resistance, and durability for commercial and office ceilings.",
-      images: [ceiling2, ceiling3, galvanisedprofiles, wwallangle],
+      images: [ceiling2, ceiling3, roomcurtains],
       badge: "Commercial",
     },
     {
@@ -209,7 +210,7 @@ const Showcase = () => {
       title: "Decorative Panels",
       description:
         "Artistic, textured 3D panels to enhance wall and ceiling aesthetics with various patterns, textures, and finishes.",
-      images: [kitchenInterior, outdoorinetrior],
+      images: [kitchenInterior, outdoorinetrior, basement],
       badge: "Luxury",
     },
   ];
@@ -245,7 +246,7 @@ const Showcase = () => {
 
     return (
       <div
-        className="fixed inset-0 bg-black/30 backdrop-blur-sm z-50 flex items-center justify-center p-4"
+        className="fixed inset-0 bg-black/30 backdrop-blur-sm z-[150] flex items-center justify-center p-4"
         onClick={() => setSelectedItem(null)}
       >
         <div
@@ -359,7 +360,7 @@ const Showcase = () => {
   };
 
   return (
-    <div className="bg-gradient-to-b from-gray-50 to-white py-20 px-6 sm:px-8 lg:px-12">
+    <div className="bg-gradient-to-b from-gray-50 to-white py-24 px-6 sm:px-8 lg:px-12">
       <div className="container mx-auto">
         <div className="text-center mb-20">
           <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-5 tracking-tight">

@@ -43,7 +43,7 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6 leading-tight">
+            <h1 className="text-3xl md:text-5xl font-bold text-gray-800 mb-6 leading-tight">
               Elevate Your Space with{" "}
               <span className="text-blue-500">PlasterPro Ghana</span>
             </h1>

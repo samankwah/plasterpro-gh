@@ -18,6 +18,7 @@ import {
   Filter,
   X,
   ThumbsUp,
+  CheckCircle,
 } from "lucide-react";
 import { usePageMeta } from "../../../hooks/usePageMeta";
 import { PAGE_METADATA } from "../../../constants/pageMetadata";
@@ -288,7 +289,7 @@ const BlogList = () => {
   return (
     <div className="bg-gradient-to-b from-white to-slate-50 min-h-screen">
       {/* Enhanced Hero Section - Reduced Height & Gray Color */}
-      <section className="relative bg-gradient-to-br from-gray-300 via-gray-700 to-gray-900 text-white py-12 md:py-16 pt-20 md:pt-24 overflow-hidden">
+      <section className="relative bg-gradient-to-br from-gray-300 via-gray-700 to-gray-900 text-white py-12 md:py-16 pt-24 md:pt-24 overflow-hidden">
         <div className="absolute inset-0">
           <div className="absolute top-10 left-10 w-64 h-64 bg-gray-600/20 rounded-full blur-3xl"></div>
           <div className="absolute bottom-10 right-10 w-64 h-64 bg-gray-500/20 rounded-full blur-3xl"></div>
@@ -336,8 +337,8 @@ const BlogList = () => {
       <section className="py-6 bg-white/80 backdrop-blur-sm border-b border-gray-200 sticky top-0 z-40">
         <div className="container mx-auto px-4">
           <div className="flex flex-col lg:flex-row gap-4 items-start lg:items-center justify-between">
-            {/* Categories */}
-            <div className="flex flex-wrap gap-2 flex-1">
+            {/* Categories - Hidden on mobile, visible on desktop */}
+            <div className="hidden lg:flex flex-wrap gap-2 flex-1">
               {categories.map((category) => (
                 <button
                   key={category}
@@ -354,11 +355,11 @@ const BlogList = () => {
             </div>
 
             {/* Sort and Mobile Filter */}
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-3 w-full lg:w-auto">
               <select
                 value={sortBy}
                 onChange={(e) => setSortBy(e.target.value)}
-                className="px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-500 focus:border-gray-500 bg-white"
+                className="flex-1 lg:flex-none px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-500 focus:border-gray-500 bg-white text-sm"
               >
                 <option value="newest">Newest First</option>
                 <option value="oldest">Oldest First</option>
@@ -368,9 +369,14 @@ const BlogList = () => {
 
               <button
                 onClick={() => setMobileFiltersOpen(!mobileFiltersOpen)}
-                className="lg:hidden p-2 border border-gray-300 rounded-lg hover:bg-gray-50"
+                className={`lg:hidden px-3 py-2 border rounded-lg flex items-center gap-2 flex-shrink-0 transition-colors ${
+                  mobileFiltersOpen
+                    ? "bg-gray-700 text-white border-gray-700"
+                    : "bg-white text-gray-700 border-gray-300 hover:bg-gray-50"
+                }`}
               >
                 <Filter className="w-5 h-5" />
+                <span className="text-sm font-medium">{selectedCategory}</span>
               </button>
             </div>
           </div>
@@ -378,6 +384,15 @@ const BlogList = () => {
           {/* Mobile Filters */}
           {mobileFiltersOpen && (
             <div className="lg:hidden mt-4 p-4 bg-white border border-gray-200 rounded-lg shadow-lg">
+              <div className="flex items-center justify-between mb-3 pb-2 border-b border-gray-200">
+                <h3 className="font-semibold text-gray-900">Filter by Category</h3>
+                <button
+                  onClick={() => setMobileFiltersOpen(false)}
+                  className="text-gray-500 hover:text-gray-700"
+                >
+                  <X className="w-5 h-5" />
+                </button>
+              </div>
               <div className="space-y-2">
                 {categories.map((category) => (
                   <button
@@ -386,13 +401,16 @@ const BlogList = () => {
                       setSelectedCategory(category);
                       setMobileFiltersOpen(false);
                     }}
-                    className={`block w-full text-left px-3 py-2 rounded-lg transition-colors ${
+                    className={`flex items-center justify-between w-full text-left px-4 py-3 rounded-lg transition-all duration-200 ${
                       selectedCategory === category
-                        ? "bg-gray-700 text-white"
-                        : "hover:bg-gray-100"
+                        ? "bg-gray-700 text-white shadow-md"
+                        : "bg-gray-50 text-gray-700 hover:bg-gray-100"
                     }`}
                   >
-                    {category}
+                    <span className="font-medium">{category}</span>
+                    {selectedCategory === category && (
+                      <CheckCircle className="w-5 h-5" />
+                    )}
                   </button>
                 ))}
               </div>

@@ -1,5 +1,6 @@
 import React from "react";
-// import CEO from "../../../assets/ceo.jpg";
+import popwindow from "../../../assets/pop window.jpeg";
+import installationVideo from "../../../assets/popinstallation.mp4";
 import { motion } from "framer-motion"; // Note: changed from react-motion to framer-motion
 import { Link } from "react-router-dom";
 import { usePageMeta } from "../../../hooks/usePageMeta";
@@ -35,7 +36,7 @@ const AboutInnovator = () => {
         <div className="lg:grid lg:grid-cols-2 lg:gap-16 items-center">
           <div className="rounded-xl overflow-hidden shadow-2xl mb-10 lg:mb-0">
             <img
-              // src={CEO}
+              src={popwindow}
               alt="PlasterPro Ghana Projects"
               className="w-full h-[400px] lg:h-full object-cover"
             />
@@ -166,68 +167,92 @@ const AboutInnovator = () => {
       </div>
 
       {/* Core Values Section */}
-      {/* <div className="py-16 bg-gray-50"> */}
-      <div className="py-16 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-2 relative inline-block">
+      <div className="py-12 md:py-16 bg-gradient-to-b from-gray-50 to-white relative overflow-hidden">
+        {/* Background decoration */}
+        <div className="absolute top-0 left-0 w-72 h-72 bg-blue-100 rounded-full blur-3xl opacity-20"></div>
+        <div className="absolute bottom-0 right-0 w-72 h-72 bg-blue-100 rounded-full blur-3xl opacity-20"></div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="text-center mb-10 md:mb-12">
+            <div className="inline-flex items-center gap-2 bg-blue-100 px-4 py-2 rounded-full text-sm font-medium text-blue-700 mb-4">
+              <span className="text-xl">✨</span>
+              <span>What Defines Us</span>
+            </div>
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-3 md:mb-4">
               Our Core Values
-              {/* <span className="absolute bottom-0 left-0 h-1 w-24 bg-blue-400 rounded-full"></span> */}
             </h2>
-            <p className="text-xl text-gray-600">What drives us every day</p>
+            <p className="text-base md:text-xl text-gray-600 max-w-2xl mx-auto">
+              What drives us every day to deliver excellence
+            </p>
           </div>
-          <div className="grid md:grid-cols-3 sm:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8">
             {[
               {
                 icon: "🌟",
                 title: "Excellence",
                 description:
                   "We uphold the highest standards in our products and services.",
+                gradient: "from-yellow-400 to-orange-500",
               },
               {
                 icon: "💡",
                 title: "Innovation",
                 description:
                   "We embrace new technologies and designs to stay ahead in the industry.",
+                gradient: "from-blue-400 to-blue-600",
               },
               {
                 icon: "🤝",
                 title: "Customer-First",
                 description:
                   "We prioritize client needs and deliver personalized solutions.",
+                gradient: "from-purple-400 to-pink-500",
               },
               {
-                icon: "⚙",
+                icon: "⚙️",
                 title: "Reliability",
                 description:
                   "We ensure timely deliveries, flawless installations, and long-lasting results.",
+                gradient: "from-gray-400 to-gray-600",
               },
               {
                 icon: "🌱",
                 title: "Sustainability",
                 description:
                   "We source environmentally friendly materials and promote sustainable building practices.",
+                gradient: "from-green-400 to-emerald-600",
               },
               {
                 icon: "🔍",
                 title: "Attention to Detail",
                 description:
                   "We believe that perfect finishes come from meticulous attention to every detail.",
+                gradient: "from-indigo-400 to-blue-500",
               },
             ].map((value, index) => (
-              <div
+              <motion.div
                 key={index}
-                className="bg-white border-l-4 border-blue-500 rounded-xl text-center overflow-hidden shadow-lg transform transition duration-300 hover:scale-105 hover:shadow-xl"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="group bg-white rounded-xl md:rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transform transition-all duration-300 hover:-translate-y-2 border border-gray-100"
               >
-                {/* <div className="h-2 bg-blue-600"></div> */}
-                <div className="p-8">
-                  <div className="text-4xl mb-4">{value.icon}</div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-2">
+                <div
+                  className={`h-1.5 bg-gradient-to-r ${value.gradient}`}
+                ></div>
+                <div className="p-5 md:p-8">
+                  <div className="text-4xl md:text-5xl mb-3 md:mb-4 transform group-hover:scale-110 transition-transform duration-300">
+                    {value.icon}
+                  </div>
+                  <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-2 md:mb-3">
                     {value.title}
                   </h3>
-                  <p className="text-gray-600">{value.description}</p>
+                  <p className="text-sm md:text-base text-gray-600 leading-relaxed">
+                    {value.description}
+                  </p>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
@@ -370,38 +395,44 @@ const AboutInnovator = () => {
           </div>
 
           {/* Installation Team */}
-          <div className="mt-16 bg-gradient-to-r from-blue-900 to-blue-700 rounded-xl overflow-hidden shadow-xl">
-            <div className="lg:grid lg:grid-cols-2">
-              <div className="p-10 flex flex-col justify-center">
-                <h3 className="text-2xl font-bold text-white mb-6">
+          <div className="mt-12 md:mt-16 bg-gradient-to-r from-blue-900 to-blue-700 rounded-xl md:rounded-2xl overflow-hidden shadow-xl">
+            <div className="lg:grid lg:grid-cols-5 lg:gap-0">
+              <div className="p-6 md:p-10 flex flex-col justify-center order-2 lg:order-1 lg:col-span-3">
+                <h3 className="text-xl md:text-2xl font-bold text-white mb-4 md:mb-6">
                   Skilled Technicians & Installers
                 </h3>
-                <p className="text-lg text-blue-100 mb-8">
+                <p className="text-base md:text-lg text-blue-100 mb-6 md:mb-8 leading-relaxed">
                   Our team of dedicated experts specializes in POP ceiling
                   installations, plasterboard fitting, acoustic ceiling
-                  solutions, and more!
+                  solutions, and more! Watch us in action transforming spaces.
                 </p>
-                <div className="flex flex-wrap gap-4">
-                  <span className="px-4 py-2 bg-gray-600 bg-opacity-20 text-white rounded-full text-sm font-medium">
+                <div className="flex flex-wrap gap-2 md:gap-3">
+                  <span className="px-3 md:px-4 py-1.5 md:py-2 bg-white/20 backdrop-blur-sm text-white rounded-full text-xs md:text-sm font-medium">
                     POP Installations
                   </span>
-                  <span className="px-4 py-2 bg-gray-600 bg-opacity-20 text-white rounded-full text-sm font-medium">
+                  <span className="px-3 md:px-4 py-1.5 md:py-2 bg-white/20 backdrop-blur-sm text-white rounded-full text-xs md:text-sm font-medium">
                     Plasterboard Fitting
                   </span>
-                  <span className="px-4 py-2 bg-gray-600 bg-opacity-20 text-white rounded-full text-sm font-medium">
+                  <span className="px-3 md:px-4 py-1.5 md:py-2 bg-white/20 backdrop-blur-sm text-white rounded-full text-xs md:text-sm font-medium">
                     Acoustic Solutions
                   </span>
-                  <span className="px-4 py-2 bg-gray-600 bg-opacity-20 text-white rounded-full text-sm font-medium">
+                  <span className="px-3 md:px-4 py-1.5 md:py-2 bg-white/20 backdrop-blur-sm text-white rounded-full text-xs md:text-sm font-medium">
                     Decorative Finishes
                   </span>
                 </div>
               </div>
-              <div className="hidden lg:block">
-                <img
-                  // src={CEO}
-                  alt="Installation Team at Work"
+              <div className="relative h-64 md:h-80 lg:h-auto order-1 lg:order-2 lg:col-span-2">
+                <video
+                  src={installationVideo}
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
                   className="w-full h-full object-cover"
-                />
+                >
+                  Your browser does not support the video tag.
+                </video>
+                <div className="absolute inset-0 bg-gradient-to-t from-blue-900/50 to-transparent lg:hidden"></div>
               </div>
             </div>
           </div>
