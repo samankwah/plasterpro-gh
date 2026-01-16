@@ -21,7 +21,7 @@ const AboutInnovator = () => {
             className="w-full h-full object-cover mix-blend-overlay"
           />
         </div> */}
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-24 text-center">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-20 lg:py-24 text-center">
           <h1 className="text-2xl md:text-3xl lg:text-5xl font-extrabold text-gray-950 tracking-tight mb-4">
             About <span className="text-blue-500">PlasterPro Ghana</span>
           </h1>
@@ -33,7 +33,7 @@ const AboutInnovator = () => {
       </div>
 
       {/* Company History Section */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-0">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12 lg:py-16">
         <div className="lg:grid lg:grid-cols-2 lg:gap-16 items-center">
           <div className="rounded-xl overflow-hidden shadow-2xl mb-10 lg:mb-0">
             <img
