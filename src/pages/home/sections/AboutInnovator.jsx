@@ -1,5 +1,6 @@
 import React from "react";
 import popwindow from "../../../assets/pop window.jpeg";
+import ceo from "../../../assets/CEO.jpeg";
 import installationVideo from "../../../assets/popinstallation.mp4";
 import { motion } from "framer-motion"; // Note: changed from react-motion to framer-motion
 import { Link } from "react-router-dom";
@@ -20,11 +21,11 @@ const AboutInnovator = () => {
             className="w-full h-full object-cover mix-blend-overlay"
           />
         </div> */}
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 text-center">
-          <h1 className="text-3xl lg:text-5xl font-extrabold text-gray-950 tracking-tight mb-4">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-24 text-center">
+          <h1 className="text-2xl md:text-3xl lg:text-5xl font-extrabold text-gray-950 tracking-tight mb-4">
             About <span className="text-blue-500">PlasterPro Ghana</span>
           </h1>
-          <p className="max-w-3xl mx-auto text-xl text-gray-900">
+          <p className="max-w-3xl mx-auto text-base md:text-lg lg:text-xl text-gray-900">
             Transforming spaces with premium ceiling and wall finishing
             solutions since 2023
           </p>
@@ -32,21 +33,21 @@ const AboutInnovator = () => {
       </div>
 
       {/* Company History Section */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-0">
         <div className="lg:grid lg:grid-cols-2 lg:gap-16 items-center">
           <div className="rounded-xl overflow-hidden shadow-2xl mb-10 lg:mb-0">
             <img
               src={popwindow}
               alt="PlasterPro Ghana Projects"
-              className="w-full h-[400px] lg:h-full object-cover"
+              className="w-full h-[300px] md:h-[400px] lg:h-full object-cover"
             />
           </div>
           <div>
-            <h2 className="text-3xl font-bold text-gray-900 mb-6 relative">
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6 relative">
               <span className="relative z-10">Our Journey</span>
               {/* <span className="absolute bottom-0 left-0 h-1 w-24 bg-blue-400"></span> */}
             </h2>
-            <p className="text-lg text-gray-700 mb-4 leading-relaxed">
+            <p className="text-sm md:text-base lg:text-lg text-gray-700 mb-4 leading-relaxed">
               Established in{" "}
               <span className="font-semibold text-blue-900">August 2023</span>,{" "}
               <span className="font-semibold text-blue-900">
@@ -56,7 +57,7 @@ const AboutInnovator = () => {
               finishing industry by providing high-quality materials and
               professional installation services.
             </p>
-            <p className="text-lg text-gray-700 mb-6 leading-relaxed">
+            <p className="text-sm md:text-base lg:text-lg text-gray-700 mb-6 leading-relaxed">
               Recognizing a growing demand for durable, aesthetic, and
               cost-effective solutions, we set out to become the go-to supplier
               for both wholesale and retail customers across Ghana.
@@ -107,10 +108,12 @@ const AboutInnovator = () => {
                     />
                   </svg>
                 </div>
-                <h2 className="text-3xl font-bold text-white">Our Mission</h2>
+                <h2 className="text-xl md:text-2xl lg:text-3xl font-bold text-white">
+                  Our Mission
+                </h2>
               </div>
               <div className="bg-[rgba(17,25,40,0.60)] border border-white/10 backdrop-saturate-180 backdrop-blur-lg p-6 rounded-xl text-white">
-                <p className="text-lg leading-relaxed">
+                <p className="text-sm md:text-base lg:text-lg leading-relaxed">
                   At{" "}
                   <span className="font-semibold text-blue-400">
                     PlasterPro Ghana
@@ -147,13 +150,15 @@ const AboutInnovator = () => {
                     />
                   </svg>
                 </div>
-                <h2 className="text-3xl font-bold text-white">Our Vision</h2>
+                <h2 className="text-xl md:text-2xl lg:text-3xl font-bold text-white">
+                  Our Vision
+                </h2>
               </div>
-              <div className="bg-[rgba(17,25,40,0.60)] border border-white/10 backdrop-saturate-180 backdrop-blur-lg p-8 rounded-xl text-white">
-                <p className="text-lg leading-relaxed">
+              <div className="bg-[rgba(17,25,40,0.60)] border border-white/10 backdrop-saturate-180 backdrop-blur-lg p-6 md:p-8 rounded-xl text-white">
+                <p className="text-sm md:text-base lg:text-lg leading-relaxed">
                   We strive to become{" "}
                   <span className="font-semibold text-blue-400">
-                    the No.1 provider
+                    the No.1 distributor
                   </span>{" "}
                   of premium ceiling and wall finishing materials and
                   installations in Ghana and the West African region, setting
@@ -262,11 +267,11 @@ const AboutInnovator = () => {
       <div className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-gray-900 mb-2 relative inline-block">
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2 relative inline-block">
               Meet Our Team
               {/* <span className="absolute bottom-0 left-0 h-1 w-24 bg-blue-400 rounded-full"></span> */}
             </h2>
-            <p className="text-xl text-gray-600">
+            <p className="text-base md:text-lg lg:text-xl text-gray-600">
               The experts behind our success
             </p>
           </div>
@@ -277,30 +282,32 @@ const AboutInnovator = () => {
               <div className="col-span-2 lg:mb-0 mb-8">
                 <div className="rounded-xl overflow-hidden shadow-lg">
                   <img
-                    // src={CEO}
+                    src={ceo}
                     alt="Betty Baffour Awuah - CEO & Founder"
                     className="w-full h-full object-cover"
                   />
                 </div>
               </div>
               <div className="col-span-3 flex flex-col justify-center">
-                <h3 className="text-3xl font-bold text-gray-900 mb-2">
+                <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">
                   Betty Baffour Awuah
                 </h3>
-                <p className="text-xl font-semibold text-blue-600 mb-4">
-                  CEO & Founder
+                <p className="text-base md:text-lg lg:text-xl font-semibold text-blue-600 mb-4">
+                  CEO & Founder-Leading with excellence in POP solutions and
+                  customer satisfaction
                 </p>
-                <p className="text-lg text-gray-600 leading-relaxed mb-6">
-                  With a strong background in business administration, brand
-                  communication, and corporate sales, Betty leads PlasterPro
-                  Ghana with a passion for excellence and customer satisfaction.
+                <p className="text-sm md:text-base lg:text-lg text-gray-600 leading-relaxed mb-6">
+                  Betty Baffour Awuah is the CEO and Founder of PlasterPro
+                  Ghana. She has a strong background in business administration,
+                  brand communication, and corporate sales, and she leads the
+                  company with a commitment to excellence and customer
+                  satisfaction.
                 </p>
-                <p className="text-lg text-gray-600 leading-relaxed">
-                  Holding a Bachelor of Arts in Communication Studies from
-                  Wisconsin University, Ghana, a Post-Graduate Diploma in
-                  Business Administration, and an MBA in Project Management from
-                  GIMPA, her leadership ensures that the company remains an
-                  industry leader.
+                <p className="text-sm md:text-base lg:text-lg text-gray-600 leading-relaxed">
+                  She holds a BA in Communication Studies from Wisconsin
+                  International University College, Ghana, Master of Arts in
+                  Public Law and Governance, a Postgraduate Diploma in Business
+                  Administration, and an MBA in Project Management from GIMPA.
                 </p>
                 <div className="flex mt-6 space-x-4">
                   <a
@@ -345,7 +352,7 @@ const AboutInnovator = () => {
           </div>
 
           {/* Other Team Members */}
-          <div className="grid md:grid-cols-3 gap-10">
+          {/* <div className="grid md:grid-cols-3 gap-10">
             {[
               {
                 name: "Felix",
@@ -392,7 +399,7 @@ const AboutInnovator = () => {
                 </div>
               </div>
             ))}
-          </div>
+          </div> */}
 
           {/* Installation Team */}
           <div className="mt-12 md:mt-16 bg-gradient-to-r from-blue-900 to-blue-700 rounded-xl md:rounded-2xl overflow-hidden shadow-xl">
@@ -442,23 +449,23 @@ const AboutInnovator = () => {
       {/* Call To Action */}
       <div className="relative bg-gradient-to-r from-blue-400 to-blue-500 py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
             Join the growing number of clients who trust PlasterPro Ghana!
           </h2>
-          <p className="text-xl text-gray-900 mb-10">
+          <p className="text-base md:text-lg lg:text-xl text-gray-900 mb-10">
             Let's bring your vision to life—
             <span className="font-bold">one ceiling at a time!</span>
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <Link
               to="/contact"
-              className="bg-white text-blue-500 hover:bg-blue-900 hover:text-white font-bold py-4 px-8 rounded-full shadow-lg transition duration-300 transform hover:scale-105"
+              className="bg-white text-blue-500 hover:bg-blue-900 hover:text-white font-bold py-3 px-6 md:py-4 md:px-8 rounded-full shadow-lg transition duration-300 transform hover:scale-105"
             >
               Contact Us Today
             </Link>
             <Link
               to="/projects"
-              className="bg-blue-900 text-white hover:bg-white hover:text-blue-900 font-bold py-4 px-8 rounded-full shadow-lg transition duration-300 transform hover:scale-105"
+              className="bg-blue-900 text-white hover:bg-white hover:text-blue-900 font-bold py-3 px-6 md:py-4 md:px-8 rounded-full shadow-lg transition duration-300 transform hover:scale-105"
             >
               View Our Projects
             </Link>

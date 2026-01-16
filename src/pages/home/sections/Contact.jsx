@@ -316,14 +316,20 @@ function Contact() {
                     </span>
                   </div>
                   <div className="flex justify-between items-center">
-                    <span className="text-sm md:text-base text-gray-700 font-medium">Saturday</span>
+                    <span className="text-sm md:text-base text-gray-700 font-medium">
+                      Saturday
+                    </span>
                     <span className="text-sm md:text-base text-gray-900 font-semibold">
                       10:00 AM - 5:00 PM
                     </span>
                   </div>
                   <div className="flex justify-between items-center">
-                    <span className="text-sm md:text-base text-gray-700 font-medium">Sunday</span>
-                    <span className="text-sm md:text-base text-gray-500">Closed</span>
+                    <span className="text-sm md:text-base text-gray-700 font-medium">
+                      Sunday
+                    </span>
+                    <span className="text-sm md:text-base text-gray-500">
+                      Closed
+                    </span>
                   </div>
                 </div>
               </div>
@@ -338,7 +344,7 @@ function Contact() {
               <div className="bg-gray-200 rounded-lg md:rounded-xl h-56 md:h-64 overflow-hidden">
                 <iframe
                   className="w-full h-full"
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d541.5835636119347!2d-0.08196425565555408!3d5.709993766879441!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfdf835f95c0f8f1%3A0x383f2bb951f8dc08!2sEast%20Legon%20Hills!5e0!3m2!1sen!2sgh!4v1740870208273!5m2!1sen!2sgh"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5236.664162824433!2d-0.1248235666702112!3d5.680111695431955!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfdf8304b16b9965%3A0xdc89da7f4fff61a0!2sPlaster%20Pro!5e0!3m2!1sen!2sgh!4v1768559524922!5m2!1sen!2sgh"
                   allowFullScreen=""
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"

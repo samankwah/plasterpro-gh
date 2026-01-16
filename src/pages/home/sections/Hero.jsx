@@ -48,9 +48,8 @@ const Hero = () => {
               <span className="text-blue-500">PlasterPro Ghana</span>
             </h1>
             <p className="text-gray-600 text-lg mb-8 max-w-lg">
-              We provide high-quality POP ceilings, lighting, wall screws, and
-              other interior building materials all with expert installation and
-              repair services. Say goodbye to traditional carpenters and
+              Welcome to PlasterPro Ghana. Your number one home of quality
+              ceiling products. Say goodbye to traditional carpenters and
               experience modern convenience.
             </p>
             <div className="flex flex-wrap gap-4 mb-8">
