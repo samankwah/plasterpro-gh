@@ -293,7 +293,7 @@ const AboutInnovator = () => {
                   Betty Baffour Awuah
                 </h3>
                 <p className="text-base md:text-lg lg:text-xl font-semibold text-blue-600 mb-4">
-                  CEO & Founder-Leading with excellence in POP solutions and
+                  CEO & Founder - Leading with excellence in POP solutions and
                   customer satisfaction
                 </p>
                 <p className="text-sm md:text-base lg:text-lg text-gray-600 leading-relaxed mb-6">
