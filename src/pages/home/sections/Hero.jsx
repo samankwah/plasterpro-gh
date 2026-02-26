@@ -49,8 +49,8 @@ const Hero = () => {
             </h1>
             <p className="text-gray-600 text-lg mb-8 max-w-lg">
               Welcome to PlasterPro Ghana. Your number one home of quality
-              ceiling products. Say goodbye to traditional carpenters and
-              experience modern convenience.
+              ceiling products. Blending traditional craftsmanship with modern
+              digital convenience.
             </p>
             <div className="flex flex-wrap gap-4 mb-8">
               <a
