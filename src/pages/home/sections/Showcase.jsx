@@ -3,6 +3,13 @@ import { usePageMeta } from "../../../hooks/usePageMeta";
 import { PAGE_METADATA } from "../../../constants/pageMetadata";
 
 // Import local images
+import popcement1 from "../../../assets/popcement 1.jpeg";
+import popcement2 from "../../../assets/popcement 2.jpeg";
+import popcement3 from "../../../assets/popcement 3.jpeg";
+import popcement from "../../../assets/popcement.jpeg";
+import plasterboard from "../../../assets/plasterboard.jpeg";
+import plasterboard1 from "../../../assets/plasterboard 1.jpeg";
+import plasterboard3 from "../../../assets/plasterboard 3.jpeg";
 import ceiling1 from "../../../assets/ceiling1.jpg";
 import ceiling2 from "../../../assets/ceiling2.jpg";
 import ceiling3 from "../../../assets/ceiling3.jpg";
@@ -24,6 +31,17 @@ import outdoorinetrior from "../../../assets/outdoorinetrior.jpg";
 import popwindow from "../../../assets/pop window.jpeg";
 import wwallangle from "../../../assets/wwallangle.jpg";
 import drywallscrews from "../../../assets/drywallscrews.jpg";
+import homecharmp from "../../../assets/Homecharmp.jpeg";
+import whiteglue from "../../../assets/white glue.jpeg";
+import sativo from "../../../assets/sativo.jpeg";
+import fiber from "../../../assets/fiber.jpeg";
+import fiber1 from "../../../assets/fiber 1.jpeg";
+import metalicChannel from "../../../assets/metalic channel.jpeg";
+import metalicChannel1 from "../../../assets/metalic channel 1.jpeg";
+import metalicChannel2 from "../../../assets/metalic channel 2.jpeg";
+import galvanisedprofiles from "../../../assets/galvanisedprofiles.jpg";
+import tappingscrew from "../../../assets/tappingscrew.jpg";
+import tappingscrew2 from "../../../assets/tappingscrew2.jpeg";
 
 const Showcase = () => {
   usePageMeta(PAGE_METADATA.products.title, PAGE_METADATA.products.description);
@@ -156,7 +174,7 @@ const Showcase = () => {
       title: "POP Cement (Plaster of Paris Cement)",
       description:
         "High-quality Plaster of Paris (POP) ceiling designs for modern homes and offices. Enhances aesthetics and improves interior ambiance.",
-      images: [ceiling1, ceiling2, ceiling3, ceiling4],
+      images: [popcement, popcement1, popcement2, popcement3, sativo],
       badge: "Best Seller",
     },
     {
@@ -170,47 +188,57 @@ const Showcase = () => {
       title: "Hardware Installation Services",
       description:
         "Expert installation of various building hardware, including ceiling frames, wall brackets, and electrical fittings.",
-      images: [roomdeco1, roomdeco, curtains, popwindow],
+      images: [
+        metalicChannel,
+        metalicChannel1,
+        metalicChannel2,
+        drywallscrews,
+        galvanisedprofiles,
+        tappingscrew,
+        tappingscrew2,
+      ],
       badge: "Premium",
     },
     {
       title: "Repairs & Maintenance",
       description:
         "Reliable repairs and maintenance services for ceilings, walls, and lighting fixtures to keep your space in top condition.",
-      images: [poptruck, ceiling1, drywallscrews, wwallangle],
+      images: [poptruck, fiber1, fiber],
       badge: "Community",
     },
     {
       title: "Plasterboard (Gypsum Board / Drywall)",
       description:
         "Sandwich-like panels with a gypsum core for partition walls, ceilings, and wall linings. Easy to install with excellent finishing properties.",
-      images: [popbucket, pop1],
+      images: [plasterboard, plasterboard1, plasterboard3],
       badge: "Versatile",
     },
     {
       title: "Fiber Ceiling Boards",
       description:
         "Compressed mineral fiber boards providing acoustic insulation, fire resistance, and durability for commercial and office ceilings.",
-      images: [ceiling2, ceiling3, roomcurtains],
+      images: [fiber1, fiber, poptruck],
       badge: "Commercial",
     },
     {
       title: "Home Charm Paints",
       description:
         "Premium wall coatings with long-lasting color, smooth finishes, and protection against environmental damage.",
-      images: [
-        "https://images.unsplash.com/photo-1562259949-e8e7689d7828?w=500",
-        "https://images.unsplash.com/photo-1589939705384-5185137a7f0f?w=500",
-        "https://images.unsplash.com/photo-1513694203232-719a280e022f?w=500",
-        "https://images.unsplash.com/photo-1600607687644-c7171b42498b?w=500",
-      ],
+      images: [homecharmp, whiteglue, popbucket],
       badge: "Eco-Friendly",
     },
     {
       title: "Decorative Panels",
       description:
         "Artistic, textured 3D panels to enhance wall and ceiling aesthetics with various patterns, textures, and finishes.",
-      images: [kitchenInterior, outdoorinetrior, basement],
+      images: [
+        kitchenInterior,
+        outdoorinetrior,
+        basement,
+        ceiling2,
+        ceiling3,
+        roomcurtains,
+      ],
       badge: "Luxury",
     },
   ];
@@ -264,11 +292,11 @@ const Showcase = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div>
-                <div className="relative h-80 sm:h-96 rounded-lg overflow-hidden mb-4">
+                <div className="relative h-80 sm:h-[420px] rounded-lg overflow-hidden mb-4 bg-gray-100">
                   <img
                     src={currentImage}
                     alt={selectedItem.title}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-contain"
                   />
                   {selectedItem.badge && (
                     <div className="absolute top-3 left-3 bg-blue-600 text-white px-4 py-1.5 rounded-full text-xs font-semibold shadow-lg">
@@ -343,7 +371,7 @@ const Showcase = () => {
                       window.open(
                         "https://wa.me/233249718356?text=Hi%2C%20I%27m%20interested%20in%20" +
                           encodeURIComponent(selectedItem.title),
-                        "_blank"
+                        "_blank",
                       );
                     }}
                     className="w-full px-6 py-4 rounded-lg font-semibold bg-blue-600 text-white hover:bg-blue-700 hover:shadow-lg transition-all duration-300 text-lg"

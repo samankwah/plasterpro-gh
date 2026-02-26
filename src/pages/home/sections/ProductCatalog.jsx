@@ -34,6 +34,23 @@ import tappingscrew from "../../../assets/tappingscrew.jpg";
 import tappingscrew2 from "../../../assets/tappingscrew2.jpeg";
 import wwallangle from "../../../assets/wwallangle.jpg";
 import drywallscrews from "../../../assets/drywallscrews.jpg";
+import basement from "../../../assets/basement.jpeg";
+import roomcurtains from "../../../assets/room curtains.jpeg";
+import popcement from "../../../assets/popcement.jpeg";
+import popcement1 from "../../../assets/popcement 1.jpeg";
+import popcement2 from "../../../assets/popcement 2.jpeg";
+import popcement3 from "../../../assets/popcement 3.jpeg";
+import sativo from "../../../assets/sativo.jpeg";
+import plasterboard from "../../../assets/plasterboard.jpeg";
+import plasterboard1 from "../../../assets/plasterboard 1.jpeg";
+import plasterboard3 from "../../../assets/plasterboard 3.jpeg";
+import fiber from "../../../assets/fiber.jpeg";
+import fiber1 from "../../../assets/fiber 1.jpeg";
+import homecharmp from "../../../assets/Homecharmp.jpeg";
+import whiteglue from "../../../assets/white glue.jpeg";
+import metalicChannel from "../../../assets/metalic channel.jpeg";
+import metalicChannel1 from "../../../assets/metalic channel 1.jpeg";
+import metalicChannel2 from "../../../assets/metalic channel 2.jpeg";
 
 // Sample product images (replace with actual imports)
 const sampleProducts = [
@@ -109,6 +126,60 @@ const sampleProducts = [
     category: "Services",
     rating: 4.4,
   },
+  {
+    id: 9,
+    title: "Metallic Channels",
+    description:
+      "Galvanized steel and aluminum profiles used for suspending ceilings, holding ceiling boards, and supporting gypsum or fiber ceiling panels.",
+    images: [metalicChannel, metalicChannel1, metalicChannel2],
+    category: "Profiles",
+    rating: 4.7,
+  },
+  {
+    id: 10,
+    title: "POP Cement (Plaster of Paris Cement)",
+    description:
+      "Fine white powder that sets quickly into a hard surface. Ideal for ceiling molding, wall coatings, false ceilings, and decorative elements.",
+    images: [popcement, popcement1, popcement2, popcement3, sativo],
+    category: "Materials",
+    rating: 4.8,
+  },
+  {
+    id: 11,
+    title: "Plasterboard (Gypsum Board / Drywall)",
+    description:
+      "Sandwich-like panels with a gypsum core for partition walls, ceilings, and wall linings. Easy to install with excellent finishing properties.",
+    images: [plasterboard, plasterboard1, plasterboard3],
+    category: "Materials",
+    rating: 4.6,
+  },
+  {
+    id: 12,
+    title: "Fiber Ceiling Boards",
+    description:
+      "Compressed mineral fiber boards providing excellent acoustic insulation, fire resistance, and durability for commercial and office ceilings.",
+    images: [fiber, fiber1, poptruck],
+    category: "Ceilings",
+    rating: 4.5,
+  },
+  {
+    id: 13,
+    title: "Home Charm Paints",
+    description:
+      "Premium wall coatings with long-lasting color, smooth finishes, and protection against environmental damage. Low VOC and eco-friendly.",
+    images: [homecharmp, whiteglue, popbucket],
+    category: "Paints",
+    rating: 4.7,
+  },
+  {
+    id: 14,
+    title: "Decorative Panels",
+    description:
+      "Artistic, textured 3D panels to enhance wall and ceiling aesthetics with various patterns, textures, and finishes for luxury interiors.",
+    images: [kitchenInterior, outdoorinetrior, basement, ceiling2, ceiling3, roomcurtains],
+    category: "Ceilings",
+    rating: 4.6,
+  },
 ];
 
 const QuickViewImageGallery = ({ product }) => {
@@ -120,24 +191,24 @@ const QuickViewImageGallery = ({ product }) => {
 
   return (
     <div>
-      <div className="relative h-64 md:h-80 rounded-lg overflow-hidden mb-4">
+      <div className="relative h-56 sm:h-72 md:h-80 rounded-lg overflow-hidden mb-3 bg-gray-100">
         <img
           src={currentImage}
           alt={product.title}
-          className="w-full h-full object-cover"
+          className="w-full h-full object-contain"
         />
       </div>
 
       {/* Thumbnail Gallery */}
       {allImages.length > 1 && (
-        <div className="grid grid-cols-4 gap-2 mb-3">
+        <div className="grid grid-cols-4 gap-1.5 sm:gap-2 mb-3">
           {allImages.map((image, index) => (
             <div
               key={index}
               onClick={() => setSelectedImageIndex(index)}
-              className={`relative h-20 rounded-lg overflow-hidden cursor-pointer transition-all ${
+              className={`relative h-14 sm:h-18 md:h-20 rounded-lg overflow-hidden cursor-pointer transition-all ${
                 selectedImageIndex === index
-                  ? "ring-2 ring-blue-600 ring-offset-2"
+                  ? "ring-2 ring-blue-600 ring-offset-1"
                   : "ring-1 ring-gray-200 hover:ring-gray-400"
               }`}
             >
@@ -538,22 +609,22 @@ const ProductCatalog = () => {
       </div>
 
       {quickViewProduct && (
-        <div className="fixed inset-0 bg-black/30 backdrop-blur-sm flex items-center justify-center z-50 p-4">
-          <div className="bg-white w-full max-w-5xl p-8 rounded-xl shadow-2xl relative max-h-[90vh] overflow-y-auto">
+        <div className="fixed inset-0 bg-black/30 backdrop-blur-sm flex items-end sm:items-center justify-center z-50 p-0 sm:p-4">
+          <div className="bg-white w-full max-w-5xl p-4 sm:p-6 md:p-8 rounded-t-2xl sm:rounded-xl shadow-2xl relative max-h-[92vh] sm:max-h-[90vh] overflow-y-auto">
             <button
-              className="absolute top-4 right-4 text-gray-500 hover:text-gray-800 z-10"
+              className="absolute top-3 right-3 sm:top-4 sm:right-4 p-1.5 rounded-full bg-gray-100 hover:bg-gray-200 text-gray-500 hover:text-gray-800 z-10 transition-colors"
               onClick={() => setQuickViewProduct(null)}
             >
-              <X size={24} />
+              <X size={20} />
             </button>
 
-            <div className="flex flex-col md:flex-row gap-6">
+            <div className="flex flex-col md:flex-row gap-4 md:gap-6">
               <div className="md:w-1/2">
                 <QuickViewImageGallery product={quickViewProduct} />
               </div>
 
               <div className="md:w-1/2">
-                <h2 className="text-2xl font-bold text-slate-800 mb-3">
+                <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-slate-800 mb-2 sm:mb-3 pr-6">
                   {quickViewProduct.title}
                 </h2>
 
