@@ -2,19 +2,39 @@ import React, { useEffect } from "react";
 import { motion, useAnimationControls } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import ScrollToTopButton from "../../../components/ScrollToTopButton";
-import PlasterProVideo from "../../../assets/ouroffice.mp4"; // Update with actual image
+import PlasterProVideo from "../../../assets/ouroffice.mp4";
+import { useSanity } from "../../../hooks/useSanity";
+
+const HERO_SETTINGS_QUERY = `*[_type == "siteSettings"][0] {
+  heroHeadline,
+  heroSubtext,
+  scrollingBanner
+}`;
+
+const DEFAULT_BANNER = [
+  "BUILDING MATERIALS",
+  "INTERIOR DESIGN",
+  "POP CEILINGS",
+  "LIGHTING SOLUTIONS",
+  "WALL FIXTURES",
+  "PLASTERPRO GHANA",
+];
 
 const Hero = () => {
   const controls = useAnimationControls();
-  const companies = [
-    "BUILDING MATERIALS",
-    "INTERIOR DESIGN",
-    "POP CEILINGS",
-    "LIGHTING SOLUTIONS",
-    "WALL FIXTURES",
-    "PLASTERPRO GHANA",
-  ];
-  const duplicatedCompanies = [...companies, ...companies];
+  const { data: siteSettings } = useSanity(HERO_SETTINGS_QUERY);
+
+  const bannerItems =
+    siteSettings?.scrollingBanner?.length > 0
+      ? siteSettings.scrollingBanner
+      : DEFAULT_BANNER;
+  const duplicatedBanner = [...bannerItems, ...bannerItems];
+
+  const headline =
+    siteSettings?.heroHeadline || "Elevate Your Space with PlasterPro Ghana";
+  const subtext =
+    siteSettings?.heroSubtext ||
+    "Welcome to PlasterPro Ghana. Your number one home of quality ceiling products. Blending traditional craftsmanship with modern digital convenience.";
 
   useEffect(() => {
     const startSlideAnimation = async () => {
@@ -44,14 +64,9 @@ const Hero = () => {
             transition={{ duration: 0.5 }}
           >
             <h1 className="text-3xl md:text-5xl font-bold text-gray-800 mb-6 leading-tight">
-              Elevate Your Space with{" "}
-              <span className="text-blue-500">PlasterPro Ghana</span>
+              {headline}
             </h1>
-            <p className="text-gray-600 text-lg mb-8 max-w-lg">
-              Welcome to PlasterPro Ghana. Your number one home of quality
-              ceiling products. Blending traditional craftsmanship with modern
-              digital convenience.
-            </p>
+            <p className="text-gray-600 text-lg mb-8 max-w-lg">{subtext}</p>
             <div className="flex flex-wrap gap-4 mb-8">
               <a
                 href="/product-catalog"
@@ -77,7 +92,7 @@ const Hero = () => {
             </div>
           </motion.div>
 
-          {/* Right column - Hero image */}
+          {/* Right column - Hero video (stays local — too large for Sanity CDN) */}
           <motion.div
             className="w-full lg:w-1/2"
             initial={{ opacity: 0 }}
@@ -87,7 +102,7 @@ const Hero = () => {
             <div className="relative">
               <div className="absolute -z-10 w-4/5 h-4/5 top-8 right-0 bg-blue-200 rounded-lg"></div>
               <video
-                src={PlasterProVideo} // Update the path to your video file
+                src={PlasterProVideo}
                 autoPlay
                 loop
                 muted
@@ -98,7 +113,7 @@ const Hero = () => {
           </motion.div>
         </div>
 
-        {/* Updated Clients section with slider */}
+        {/* Scrolling banner */}
         <motion.div
           className="mt-16 pt-6 border-t border-gray-100"
           initial={{ opacity: 0 }}
@@ -113,12 +128,12 @@ const Hero = () => {
               className="flex items-center gap-16 whitespace-nowrap"
               animate={controls}
             >
-              {duplicatedCompanies.map((company, index) => (
+              {duplicatedBanner.map((label, index) => (
                 <div
-                  key={`${company}-${index}`}
+                  key={`${label}-${index}`}
                   className="text-gray-400 font-bold px-8 flex-shrink-0"
                 >
-                  {company}
+                  {label}
                 </div>
               ))}
             </motion.div>

@@ -1,247 +1,49 @@
 import { useEffect, useState } from "react";
 import { usePageMeta } from "../../../hooks/usePageMeta";
 import { PAGE_METADATA } from "../../../constants/pageMetadata";
+import { useSanity } from "../../../hooks/useSanity";
+import { urlFor } from "../../../lib/urlFor";
 
-// Import local images
-import popcement1 from "../../../assets/popcement 1.jpeg";
-import popcement2 from "../../../assets/popcement 2.jpeg";
-import popcement3 from "../../../assets/popcement 3.jpeg";
-import popcement from "../../../assets/popcement.jpeg";
-import plasterboard from "../../../assets/plasterboard.jpeg";
-import plasterboard1 from "../../../assets/plasterboard 1.jpeg";
-import plasterboard3 from "../../../assets/plasterboard 3.jpeg";
-import ceiling1 from "../../../assets/ceiling1.jpg";
-import ceiling2 from "../../../assets/ceiling2.jpg";
-import ceiling3 from "../../../assets/ceiling3.jpg";
-import ceiling4 from "../../../assets/ceiling4.jpg";
-import popbucket from "../../../assets/popbucket.jpg";
-import lighting1 from "../../../assets/lighting1.jpg";
-import lighting2 from "../../../assets/lighting2.jpg";
-import lighting3 from "../../../assets/lighting3.jpg";
-import lighting4 from "../../../assets/lighting4.jpg";
-import basement from "../../../assets/basement.jpeg";
-import roomdeco from "../../../assets/roomdeco.jpg";
-import roomdeco1 from "../../../assets/roomdeco1.jpg";
-import curtains from "../../../assets/curtains.jpg";
-import poptruck from "../../../assets/poptruck.jpg";
-import kitchenInterior from "../../../assets/kitchenInterior.jpg";
-import roomcurtains from "../../../assets/room curtains.jpeg";
-import pop1 from "../../../assets/pop1.jpg";
-import outdoorinetrior from "../../../assets/outdoorinetrior.jpg";
-import popwindow from "../../../assets/pop window.jpeg";
-import wwallangle from "../../../assets/wwallangle.jpg";
-import drywallscrews from "../../../assets/drywallscrews.jpg";
-import homecharmp from "../../../assets/Homecharmp.jpeg";
-import whiteglue from "../../../assets/white glue.jpeg";
-import sativo from "../../../assets/sativo.jpeg";
-import fiber from "../../../assets/fiber.jpeg";
-import fiber1 from "../../../assets/fiber 1.jpeg";
-import metalicChannel from "../../../assets/metalic channel.jpeg";
-import metalicChannel1 from "../../../assets/metalic channel 1.jpeg";
-import metalicChannel2 from "../../../assets/metalic channel 2.jpeg";
-import galvanisedprofiles from "../../../assets/galvanisedprofiles.jpg";
-import tappingscrew from "../../../assets/tappingscrew.jpg";
-import tappingscrew2 from "../../../assets/tappingscrew2.jpeg";
+const SHOWCASE_QUERY = `*[_type == "showcaseItem"] | order(displayOrder asc) {
+  _id,
+  title,
+  description,
+  badge,
+  images,
+  detailDescription,
+  keyFeatures,
+  commonUses
+}`;
+
+const ShowcaseSkeleton = () => (
+  <div className="bg-gradient-to-b from-gray-50 to-white py-24 px-6 sm:px-8 lg:px-12">
+    <div className="container mx-auto">
+      <div className="text-center mb-20">
+        <div className="h-10 w-72 bg-gray-200 rounded animate-pulse mx-auto mb-5"></div>
+        <div className="h-6 w-96 bg-gray-200 rounded animate-pulse mx-auto"></div>
+      </div>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10">
+        {[...Array(8)].map((_, i) => (
+          <div key={i} className="bg-white rounded-xl shadow-md overflow-hidden">
+            <div className="h-64 bg-gray-200 animate-pulse"></div>
+            <div className="p-5">
+              <div className="h-5 w-3/4 bg-gray-200 rounded animate-pulse mb-3"></div>
+              <div className="h-4 w-full bg-gray-200 rounded animate-pulse mb-2"></div>
+              <div className="h-4 w-2/3 bg-gray-200 rounded animate-pulse"></div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+);
 
 const Showcase = () => {
   usePageMeta(PAGE_METADATA.products.title, PAGE_METADATA.products.description);
 
+  const { data: showcaseItems, loading } = useSanity(SHOWCASE_QUERY);
   const [selectedItem, setSelectedItem] = useState(null);
   const [animateItems, setAnimateItems] = useState(false);
-
-  const productDetails = {
-    "POP Cement (Plaster of Paris Cement)": {
-      description:
-        "Plaster of Paris (POP) Cement is a fine, white powder derived from gypsum (calcium sulfate dihydrate), which, when mixed with water, forms a quick-setting paste that hardens over time. It is widely used for ceiling molding, wall coatings, false ceilings, and decorative elements.",
-      keyFeatures: [
-        "Smooth Finish – Ideal for interior walls and ceilings.",
-        "Fast Drying – Sets in 10-15 minutes, fully cures within 24 hours.",
-        "Lightweight & Crack-Resistant – Reduces surface shrinkage.",
-        "Fire-Resistant & Non-Toxic – Enhances safety in buildings.",
-      ],
-      commonUses:
-        "False ceilings, wall decorations, cornices, medallions, and molding designs.",
-    },
-    "Plasterboard (Gypsum Board / Drywall)": {
-      description:
-        "Plasterboard, also called drywall or gypsum board, is a sandwich-like panel consisting of a gypsum core pressed between two sheets of paper or fiberglass. It is commonly used for partition walls, ceilings, and wall linings.",
-      keyFeatures: [
-        "Quick & Easy Installation – Reduces construction time.",
-        "Smooth, Paintable Surface – Ideal for finishing.",
-        "Fire-Resistant & Soundproofing Capabilities – Improves safety and acoustics.",
-        "Moisture-Resistant Options Available – Perfect for bathrooms & kitchens.",
-      ],
-      commonUses:
-        "Wall partitions, false ceilings, and commercial & residential interiors.",
-    },
-    "Fiber Ceiling Boards": {
-      description:
-        "Fiber ceiling boards are made of compressed mineral fibers, which provide excellent acoustic insulation, fire resistance, and durability. They are ideal for commercial and office ceilings.",
-      keyFeatures: [
-        "Durable & Moisture-Resistant – Great for humid environments.",
-        "Excellent Acoustic Performance – Reduces noise pollution.",
-        "Fire-Resistant – Enhances safety in buildings.",
-        "Eco-Friendly – Made with natural & recycled materials.",
-      ],
-      commonUses:
-        "Suspended ceilings in offices, schools, hospitals, and shopping malls.",
-    },
-    "Home Charm Paints": {
-      description:
-        "Home Charm Paints are premium-quality wall coatings designed to provide long-lasting color, smooth finishes, and protection against environmental damage.",
-      keyFeatures: [
-        "Vibrant, Long-Lasting Colors – Fade-resistant technology.",
-        "Easy to Apply & Quick Drying – Low maintenance and hassle-free.",
-        "Washable & Stain-Resistant – Great for high-traffic areas.",
-        "Low VOC (Volatile Organic Compounds) – Eco-friendly and non-toxic.",
-      ],
-      commonUses:
-        "Interior & exterior walls, ceilings, trims, and decorative finishes.",
-    },
-    "Metallic Channels": {
-      description:
-        "Metallic channels are galvanized steel or aluminum profiles used for suspending ceilings, holding ceiling boards, and supporting gypsum or fiber ceiling panels.",
-      keyFeatures: [
-        "High Strength & Load-Bearing Capacity – Supports heavy ceiling materials.",
-        "Rust & Corrosion Resistant – Long-lasting durability.",
-        "Lightweight & Easy to Install – Saves time in ceiling setup.",
-      ],
-      commonUses:
-        "False ceilings, gypsum ceiling grids, and office ceiling structures.",
-    },
-    "Acoustic Ceilings": {
-      description:
-        "Acoustic ceilings are sound-absorbing panels designed to reduce noise levels in commercial, residential, and industrial spaces.",
-      keyFeatures: [
-        "Superior Sound Absorption – Reduces echoes & noise pollution.",
-        "Fire-Resistant & Lightweight – Enhances safety.",
-        "Moisture-Resistant Coating – Prevents mold growth.",
-      ],
-      commonUses:
-        "Offices, recording studios, conference rooms, restaurants, and homes.",
-    },
-    "Decorative Panels": {
-      description:
-        "Decorative panels are artistic, textured panels used to enhance wall and ceiling aesthetics. They come in various patterns, textures, and finishes.",
-      keyFeatures: [
-        "Visually Appealing & Luxurious Designs – Elevates interior décor.",
-        "Durable & Impact-Resistant – Long-lasting beauty.",
-        "Moisture & Fire-Resistant Options Available – Suitable for various environments.",
-      ],
-      commonUses:
-        "Feature walls, luxury ceilings, hotel lobbies, and interior design accents.",
-    },
-    "Room Lighting Solutions": {
-      description:
-        "Professional lighting solutions designed to enhance the ambiance and functionality of any space. Our options include modern fixtures for both aesthetic appeal and practical illumination.",
-      keyFeatures: [
-        "Energy-Efficient Designs – Reduces electricity consumption.",
-        "Customizable Brightness – Adjustable to suit different needs.",
-        "Modern Aesthetics – Enhances interior design.",
-        "Professional Installation – Ensures safety and optimal positioning.",
-      ],
-      commonUses:
-        "Living rooms, offices, kitchens, showrooms, and commercial spaces.",
-    },
-    "Hardware Installation Services": {
-      description:
-        "Professional installation services for all types of building hardware components. Our experienced team ensures proper fitting and functionality.",
-      keyFeatures: [
-        "Expert Technicians – Trained in industry best practices.",
-        "Quality Assurance – Rigorous testing after installation.",
-        "Time-Efficient – Minimizes disruption to your space.",
-        "Comprehensive Service – Handles all hardware types.",
-      ],
-      commonUses:
-        "Ceiling frames, wall brackets, electrical fittings, doors and windows hardware.",
-    },
-    "Repairs & Maintenance": {
-      description:
-        "Complete repair and maintenance services to keep your property in pristine condition. We handle all aspects of ceiling, wall, and lighting maintenance.",
-      keyFeatures: [
-        "Prompt Response – Quick attention to urgent issues.",
-        "Preventative Care – Identifies potential problems early.",
-        "Skilled Technicians – Experienced in various repair types.",
-        "Quality Materials – Uses only industry-approved products.",
-      ],
-      commonUses:
-        "Damaged ceilings, wall cracks, lighting issues, routine maintenance checks.",
-    },
-  };
-
-  const showcaseItems = [
-    {
-      title: "POP Cement (Plaster of Paris Cement)",
-      description:
-        "High-quality Plaster of Paris (POP) ceiling designs for modern homes and offices. Enhances aesthetics and improves interior ambiance.",
-      images: [popcement, popcement1, popcement2, popcement3, sativo],
-      badge: "Best Seller",
-    },
-    {
-      title: "Room Lighting Solutions",
-      description:
-        "Professional installation of stylish and energy-efficient lighting for residential and commercial spaces.",
-      images: [lighting1, lighting2, lighting3, lighting4],
-      badge: "New",
-    },
-    {
-      title: "Hardware Installation Services",
-      description:
-        "Expert installation of various building hardware, including ceiling frames, wall brackets, and electrical fittings.",
-      images: [
-        metalicChannel,
-        metalicChannel1,
-        metalicChannel2,
-        drywallscrews,
-        galvanisedprofiles,
-        tappingscrew,
-        tappingscrew2,
-      ],
-      badge: "Premium",
-    },
-    {
-      title: "Repairs & Maintenance",
-      description:
-        "Reliable repairs and maintenance services for ceilings, walls, and lighting fixtures to keep your space in top condition.",
-      images: [poptruck, fiber1, fiber],
-      badge: "Community",
-    },
-    {
-      title: "Plasterboard (Gypsum Board / Drywall)",
-      description:
-        "Sandwich-like panels with a gypsum core for partition walls, ceilings, and wall linings. Easy to install with excellent finishing properties.",
-      images: [plasterboard, plasterboard1, plasterboard3],
-      badge: "Versatile",
-    },
-    {
-      title: "Fiber Ceiling Boards",
-      description:
-        "Compressed mineral fiber boards providing acoustic insulation, fire resistance, and durability for commercial and office ceilings.",
-      images: [fiber1, fiber, poptruck],
-      badge: "Commercial",
-    },
-    {
-      title: "Home Charm Paints",
-      description:
-        "Premium wall coatings with long-lasting color, smooth finishes, and protection against environmental damage.",
-      images: [homecharmp, whiteglue, popbucket],
-      badge: "Eco-Friendly",
-    },
-    {
-      title: "Decorative Panels",
-      description:
-        "Artistic, textured 3D panels to enhance wall and ceiling aesthetics with various patterns, textures, and finishes.",
-      images: [
-        kitchenInterior,
-        outdoorinetrior,
-        basement,
-        ceiling2,
-        ceiling3,
-        roomcurtains,
-      ],
-      badge: "Luxury",
-    },
-  ];
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -262,14 +64,14 @@ const Showcase = () => {
   const QuickViewModal = () => {
     const [selectedImageIndex, setSelectedImageIndex] = useState(0);
 
-    const details = productDetails[selectedItem.title] || {
-      description: selectedItem.description,
-      keyFeatures: [],
-      commonUses: "",
+    const details = {
+      description:
+        selectedItem.detailDescription || selectedItem.description || "",
+      keyFeatures: selectedItem.keyFeatures || [],
+      commonUses: selectedItem.commonUses || "",
     };
 
-    // Get all images (either from images array or single imageUrl)
-    const allImages = selectedItem.images || [selectedItem.imageUrl];
+    const allImages = selectedItem.images || [];
     const currentImage = allImages[selectedImageIndex];
 
     return (
@@ -293,11 +95,13 @@ const Showcase = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div>
                 <div className="relative h-80 sm:h-[420px] rounded-lg overflow-hidden mb-4 bg-gray-100">
-                  <img
-                    src={currentImage}
-                    alt={selectedItem.title}
-                    className="w-full h-full object-contain"
-                  />
+                  {currentImage && (
+                    <img
+                      src={urlFor(currentImage).width(800).url()}
+                      alt={selectedItem.title}
+                      className="w-full h-full object-contain"
+                    />
+                  )}
                   {selectedItem.badge && (
                     <div className="absolute top-3 left-3 bg-blue-600 text-white px-4 py-1.5 rounded-full text-xs font-semibold shadow-lg">
                       {selectedItem.badge}
@@ -305,7 +109,6 @@ const Showcase = () => {
                   )}
                 </div>
 
-                {/* Thumbnail Gallery */}
                 {allImages.length > 1 && (
                   <div className="grid grid-cols-4 gap-2">
                     {allImages.map((image, index) => (
@@ -319,7 +122,7 @@ const Showcase = () => {
                         }`}
                       >
                         <img
-                          src={image}
+                          src={urlFor(image).width(200).url()}
                           alt={`${selectedItem.title} ${index + 1}`}
                           className="w-full h-full object-cover"
                         />
@@ -343,7 +146,7 @@ const Showcase = () => {
                   </p>
                 </div>
 
-                {details.keyFeatures && details.keyFeatures.length > 0 && (
+                {details.keyFeatures.length > 0 && (
                   <div className="mb-6">
                     <h4 className="text-sm uppercase text-gray-500 font-semibold mb-2">
                       Key Features
@@ -371,7 +174,7 @@ const Showcase = () => {
                       window.open(
                         "https://wa.me/233249718356?text=Hi%2C%20I%27m%20interested%20in%20" +
                           encodeURIComponent(selectedItem.title),
-                        "_blank",
+                        "_blank"
                       );
                     }}
                     className="w-full px-6 py-4 rounded-lg font-semibold bg-blue-600 text-white hover:bg-blue-700 hover:shadow-lg transition-all duration-300 text-lg"
@@ -387,6 +190,10 @@ const Showcase = () => {
     );
   };
 
+  if (loading) return <ShowcaseSkeleton />;
+
+  const items = showcaseItems || [];
+
   return (
     <div className="bg-gradient-to-b from-gray-50 to-white py-24 px-6 sm:px-8 lg:px-12">
       <div className="container mx-auto">
@@ -401,9 +208,9 @@ const Showcase = () => {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10">
-          {showcaseItems.map((item, index) => (
+          {items.map((item, index) => (
             <div
-              key={index}
+              key={item._id}
               className={`bg-white rounded-xl shadow-md hover:shadow-xl overflow-hidden transition-all duration-500 transform ${
                 animateItems
                   ? "opacity-100 translate-y-0"
@@ -415,11 +222,13 @@ const Showcase = () => {
                 className="relative h-64 overflow-hidden cursor-pointer group"
                 onClick={() => setSelectedItem(item)}
               >
-                <img
-                  src={item.images ? item.images[0] : item.imageUrl}
-                  alt={item.title}
-                  className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
-                />
+                {item.images?.[0] && (
+                  <img
+                    src={urlFor(item.images[0]).width(600).height(512).url()}
+                    alt={item.title}
+                    className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+                  />
+                )}
                 {item.badge && (
                   <div className="absolute top-3 left-3 bg-blue-600 text-white px-3 py-1 rounded-full text-xs font-semibold shadow-md">
                     {item.badge}
@@ -462,7 +271,7 @@ const Showcase = () => {
               ? "opacity-100 translate-y-0"
               : "opacity-0 translate-y-8"
           }`}
-          style={{ transitionDelay: `${showcaseItems.length * 100 + 100}ms` }}
+          style={{ transitionDelay: `${items.length * 100 + 100}ms` }}
         >
           <a
             href="/product-catalog"

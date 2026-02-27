@@ -11,195 +11,67 @@ import {
 } from "lucide-react";
 import { usePageMeta } from "../../../hooks/usePageMeta";
 import { PAGE_METADATA } from "../../../constants/pageMetadata";
+import { useSanity } from "../../../hooks/useSanity";
+import { urlFor } from "../../../lib/urlFor";
 
-// Import local images
-import ceiling1 from "../../../assets/ceiling1.jpg";
-import ceiling2 from "../../../assets/ceiling2.jpg";
-import ceiling3 from "../../../assets/ceiling3.jpg";
-import ceiling4 from "../../../assets/ceiling4.jpg";
-import popbucket from "../../../assets/popbucket.jpg";
-import lighting1 from "../../../assets/lighting1.jpg";
-import lighting2 from "../../../assets/lighting2.jpg";
-import lighting3 from "../../../assets/lighting3.jpg";
-import lighting4 from "../../../assets/lighting4.jpg";
-import roomdeco from "../../../assets/roomdeco.jpg";
-import roomdeco1 from "../../../assets/roomdeco1.jpg";
-import curtains from "../../../assets/curtains.jpg";
-import poptruck from "../../../assets/poptruck.jpg";
-import kitchenInterior from "../../../assets/kitchenInterior.jpg";
-import galvanisedprofiles from "../../../assets/galvanisedprofiles.jpg";
-import pop1 from "../../../assets/pop1.jpg";
-import outdoorinetrior from "../../../assets/outdoorinetrior.jpg";
-import tappingscrew from "../../../assets/tappingscrew.jpg";
-import tappingscrew2 from "../../../assets/tappingscrew2.jpeg";
-import wwallangle from "../../../assets/wwallangle.jpg";
-import drywallscrews from "../../../assets/drywallscrews.jpg";
-import basement from "../../../assets/basement.jpeg";
-import roomcurtains from "../../../assets/room curtains.jpeg";
-import popcement from "../../../assets/popcement.jpeg";
-import popcement1 from "../../../assets/popcement 1.jpeg";
-import popcement2 from "../../../assets/popcement 2.jpeg";
-import popcement3 from "../../../assets/popcement 3.jpeg";
-import sativo from "../../../assets/sativo.jpeg";
-import plasterboard from "../../../assets/plasterboard.jpeg";
-import plasterboard1 from "../../../assets/plasterboard 1.jpeg";
-import plasterboard3 from "../../../assets/plasterboard 3.jpeg";
-import fiber from "../../../assets/fiber.jpeg";
-import fiber1 from "../../../assets/fiber 1.jpeg";
-import homecharmp from "../../../assets/Homecharmp.jpeg";
-import whiteglue from "../../../assets/white glue.jpeg";
-import metalicChannel from "../../../assets/metalic channel.jpeg";
-import metalicChannel1 from "../../../assets/metalic channel 1.jpeg";
-import metalicChannel2 from "../../../assets/metalic channel 2.jpeg";
+const PRODUCTS_QUERY = `*[_type == "product"] | order(displayOrder asc) {
+  _id,
+  title,
+  description,
+  category,
+  rating,
+  images
+}`;
 
-// Sample product images (replace with actual imports)
-const sampleProducts = [
-  {
-    id: 1,
-    title: "POP Ceiling Installation",
-    description:
-      "High-quality Plaster of Paris (POP) ceiling designs for modern homes and offices.",
-    images: [ceiling1, ceiling2, ceiling3, ceiling4],
-    category: "Ceilings",
-    rating: 4.8,
-  },
-  {
-    id: 2,
-    title: "Room Lighting Solutions",
-    description:
-      "Professional installation of stylish and energy-efficient lighting for interiors.",
-    images: [lighting1, lighting2, lighting3, lighting4],
-    category: "Lighting",
-    rating: 4.6,
-  },
-  {
-    id: 3,
-    title: "Tapping Screws",
-    description:
-      "Durable tapping screws for securing metal and wood surfaces with precision.",
-    images: [tappingscrew, drywallscrews, wwallangle, galvanisedprofiles],
-    category: "Hardware",
-    rating: 4.3,
-  },
-  {
-    id: 4,
-    title: "Drywall Screws",
-    description:
-      "Reliable drywall screws for securing plasterboard installations with ease.",
-    images: [drywallscrews, tappingscrew, tappingscrew2],
-    category: "Hardware",
-    rating: 4.7,
-  },
-  {
-    id: 5,
-    title: "Wall Angle Brackets",
-    description:
-      "Premium wall angle brackets for strong and lasting interior structures.",
-    images: [wwallangle, galvanisedprofiles, tappingscrew],
-    category: "Hardware",
-    rating: 4.5,
-  },
-  {
-    id: 6,
-    title: "Galvanized Profiles",
-    description:
-      "Corrosion-resistant galvanized profiles for durable ceiling and wall support.",
-    images: [galvanisedprofiles, wwallangle, ceiling2, ceiling3],
-    category: "Profiles",
-    rating: 4.9,
-  },
-  {
-    id: 7,
-    title: "Hardware Installation Services",
-    description:
-      "Expert installation of various building hardware for residential and commercial spaces.",
-    images: [roomdeco1, roomdeco, curtains, tappingscrew],
-    category: "Services",
-    rating: 5.0,
-  },
-  {
-    id: 8,
-    title: "Repairs & Maintenance",
-    description:
-      "Professional repair and maintenance services for ceilings, walls, and lighting fixtures.",
-    images: [poptruck, ceiling1, drywallscrews, wwallangle],
-    category: "Services",
-    rating: 4.4,
-  },
-  {
-    id: 9,
-    title: "Metallic Channels",
-    description:
-      "Galvanized steel and aluminum profiles used for suspending ceilings, holding ceiling boards, and supporting gypsum or fiber ceiling panels.",
-    images: [metalicChannel, metalicChannel1, metalicChannel2],
-    category: "Profiles",
-    rating: 4.7,
-  },
-  {
-    id: 10,
-    title: "POP Cement (Plaster of Paris Cement)",
-    description:
-      "Fine white powder that sets quickly into a hard surface. Ideal for ceiling molding, wall coatings, false ceilings, and decorative elements.",
-    images: [popcement, popcement1, popcement2, popcement3, sativo],
-    category: "Materials",
-    rating: 4.8,
-  },
-  {
-    id: 11,
-    title: "Plasterboard (Gypsum Board / Drywall)",
-    description:
-      "Sandwich-like panels with a gypsum core for partition walls, ceilings, and wall linings. Easy to install with excellent finishing properties.",
-    images: [plasterboard, plasterboard1, plasterboard3],
-    category: "Materials",
-    rating: 4.6,
-  },
-  {
-    id: 12,
-    title: "Fiber Ceiling Boards",
-    description:
-      "Compressed mineral fiber boards providing excellent acoustic insulation, fire resistance, and durability for commercial and office ceilings.",
-    images: [fiber, fiber1, poptruck],
-    category: "Ceilings",
-    rating: 4.5,
-  },
-  {
-    id: 13,
-    title: "Home Charm Paints",
-    description:
-      "Premium wall coatings with long-lasting color, smooth finishes, and protection against environmental damage. Low VOC and eco-friendly.",
-    images: [homecharmp, whiteglue, popbucket],
-    category: "Paints",
-    rating: 4.7,
-  },
-  {
-    id: 14,
-    title: "Decorative Panels",
-    description:
-      "Artistic, textured 3D panels to enhance wall and ceiling aesthetics with various patterns, textures, and finishes for luxury interiors.",
-    images: [kitchenInterior, outdoorinetrior, basement, ceiling2, ceiling3, roomcurtains],
-    category: "Ceilings",
-    rating: 4.6,
-  },
-];
+const ProductCatalogSkeleton = () => (
+  <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white pt-20 pb-12">
+    <div className="container mx-auto px-4 py-8">
+      <div className="text-center mb-10">
+        <div className="h-9 w-72 bg-gray-200 rounded animate-pulse mx-auto mb-4"></div>
+        <div className="h-5 w-96 bg-gray-200 rounded animate-pulse mx-auto"></div>
+      </div>
+      <div className="flex gap-8">
+        <div className="hidden md:block w-80 flex-shrink-0">
+          <div className="bg-white p-6 rounded-xl shadow-lg border border-slate-100 h-64 animate-pulse"></div>
+        </div>
+        <div className="flex-1 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {[...Array(6)].map((_, i) => (
+            <div
+              key={i}
+              className="bg-white rounded-xl shadow-sm border border-slate-100 overflow-hidden"
+            >
+              <div className="h-56 bg-gray-200 animate-pulse"></div>
+              <div className="p-5">
+                <div className="h-5 w-3/4 bg-gray-200 rounded animate-pulse mb-3"></div>
+                <div className="h-4 w-full bg-gray-200 rounded animate-pulse mb-2"></div>
+                <div className="h-4 w-2/3 bg-gray-200 rounded animate-pulse"></div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+);
 
 const QuickViewImageGallery = ({ product }) => {
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
 
-  // Get all images (either from images array or single imageUrl)
-  const allImages = product.images || [product.imageUrl];
+  const allImages = product.images || [];
   const currentImage = allImages[selectedImageIndex];
 
   return (
     <div>
       <div className="relative h-56 sm:h-72 md:h-80 rounded-lg overflow-hidden mb-3 bg-gray-100">
-        <img
-          src={currentImage}
-          alt={product.title}
-          className="w-full h-full object-contain"
-        />
+        {currentImage && (
+          <img
+            src={urlFor(currentImage).width(800).url()}
+            alt={product.title}
+            className="w-full h-full object-contain"
+          />
+        )}
       </div>
 
-      {/* Thumbnail Gallery */}
       {allImages.length > 1 && (
         <div className="grid grid-cols-4 gap-1.5 sm:gap-2 mb-3">
           {allImages.map((image, index) => (
@@ -213,7 +85,7 @@ const QuickViewImageGallery = ({ product }) => {
               }`}
             >
               <img
-                src={image}
+                src={urlFor(image).width(200).url()}
                 alt={`${product.title} ${index + 1}`}
                 className="w-full h-full object-cover"
               />
@@ -240,7 +112,12 @@ const QuickViewImageGallery = ({ product }) => {
 };
 
 const ProductCatalog = () => {
-  usePageMeta(PAGE_METADATA.productCatalog.title, PAGE_METADATA.productCatalog.description);
+  usePageMeta(
+    PAGE_METADATA.productCatalog.title,
+    PAGE_METADATA.productCatalog.description
+  );
+
+  const { data, loading } = useSanity(PRODUCTS_QUERY);
 
   const [searchQuery, setSearchQuery] = useState("");
   const [searchInput, setSearchInput] = useState("");
@@ -250,7 +127,7 @@ const ProductCatalog = () => {
   const [showFilters, setShowFilters] = useState(false);
   const [quickViewProduct, setQuickViewProduct] = useState(null);
 
-  const allProducts = useMemo(() => sampleProducts, []);
+  const allProducts = useMemo(() => data || [], [data]);
 
   const categories = useMemo(
     () => [
@@ -314,6 +191,8 @@ const ProductCatalog = () => {
     }
     return stars;
   };
+
+  if (loading) return <ProductCatalogSkeleton />;
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white pt-20 pb-12">
@@ -521,19 +400,21 @@ const ProductCatalog = () => {
             >
               {filteredAndSortedProducts.map((product) => (
                 <div
-                  key={product.id}
+                  key={product._id}
                   className={`group bg-white rounded-xl shadow-sm overflow-hidden border border-slate-100 transition-all hover:shadow-md relative ${
                     viewMode === "list" ? "flex" : ""
                   }`}
                 >
                   <div className="relative overflow-hidden">
-                    <img
-                      src={product.images ? product.images[0] : product.imageUrl}
-                      alt={product.title}
-                      className={`object-cover transition-transform group-hover:scale-105 ${
-                        viewMode === "list" ? "w-48 h-full" : "w-full h-56"
-                      }`}
-                    />
+                    {product.images?.[0] && (
+                      <img
+                        src={urlFor(product.images[0]).width(600).url()}
+                        alt={product.title}
+                        className={`object-cover transition-transform group-hover:scale-105 ${
+                          viewMode === "list" ? "w-48 h-full" : "w-full h-56"
+                        }`}
+                      />
+                    )}
                     <div className="absolute top-3 right-3">
                       <span
                         className={`px-3 py-1 rounded-full text-xs font-semibold ${

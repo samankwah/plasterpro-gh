@@ -15,9 +15,82 @@ import {
 } from "lucide-react";
 import { usePageMeta } from "../../../hooks/usePageMeta";
 import { PAGE_METADATA } from "../../../constants/pageMetadata";
+import { useSanity } from "../../../hooks/useSanity";
+
+const CONTACT_SETTINGS_QUERY = `*[_type == "siteSettings"][0] {
+  address,
+  phone1,
+  phone2,
+  email,
+  whatsappNumber,
+  mondayFridayHours,
+  saturdayHours,
+  sundayStatus,
+  faqs
+}`;
+
+const DEFAULT_FAQS = [
+  {
+    question: "What is POP Ceiling Installation?",
+    answer:
+      "POP Ceiling Installation involves using high-quality Plaster of Paris to create elegant, modern ceilings that enhance interior spaces.",
+  },
+  {
+    question: "How do Room Lighting Solutions improve my space?",
+    answer:
+      "Our Room Lighting Solutions are designed to provide energy-efficient and stylish lighting, improving both the aesthetics and functionality of your space.",
+  },
+  {
+    question: "What services are included in Hardware Installation?",
+    answer:
+      "We offer expert installation of various building hardware, including ceiling frames, wall brackets, and other essential fittings to ensure your space is secure and visually appealing.",
+  },
+  {
+    question: "How can I book Repairs & Maintenance services?",
+    answer:
+      "You can easily contact us via our website form or email us directly to schedule repairs and maintenance for your ceilings, walls, or lighting fixtures.",
+  },
+];
 
 function Contact() {
   usePageMeta(PAGE_METADATA.contact.title, PAGE_METADATA.contact.description);
+
+  const { data: siteSettings } = useSanity(CONTACT_SETTINGS_QUERY);
+
+  const address = siteSettings?.address || "East Legon Hills, Accra";
+  const phone1 = siteSettings?.phone1 || "+233 249 718 356";
+  const phone2 = siteSettings?.phone2 || "+233 244 493 6551";
+  const email = siteSettings?.email || "plasterproent@gmail.com";
+  const whatsappNumber = siteSettings?.whatsappNumber || "233249718356";
+  const mondayFridayHours =
+    siteSettings?.mondayFridayHours || "9:00 AM - 5:00 PM";
+  const saturdayHours = siteSettings?.saturdayHours || "10:00 AM - 5:00 PM";
+  const sundayStatus = siteSettings?.sundayStatus || "Closed";
+  const faqs =
+    siteSettings?.faqs?.length > 0 ? siteSettings.faqs : DEFAULT_FAQS;
+
+  const contactMethods = [
+    {
+      icon: MapPin,
+      title: "Visit Us",
+      details: address,
+      color: "from-blue-500 to-blue-600",
+    },
+    {
+      icon: Phone,
+      title: "Call Us",
+      details: phone1,
+      details2: phone2,
+      color: "from-slate-700 to-slate-800",
+    },
+    {
+      icon: Mail,
+      title: "Email Us",
+      details: email,
+      color: "from-blue-600 to-slate-700",
+    },
+  ];
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -51,7 +124,6 @@ function Contact() {
 
     const formspreeId = import.meta.env.VITE_FORMSPREE_CONTACT_FORM_ID;
 
-    // Check if Formspree ID is configured
     if (!formspreeId || formspreeId === "your_contact_form_id_here") {
       setFormState({
         isSubmitting: false,
@@ -75,7 +147,6 @@ function Contact() {
         setFormState({ isSubmitting: false, isSubmitted: true, error: null });
         setFormData({ name: "", email: "", message: "", phone: "" });
 
-        // Reset success message after 5 seconds
         setTimeout(() => {
           setFormState({
             isSubmitting: false,
@@ -95,51 +166,6 @@ function Contact() {
       });
     }
   };
-
-  const contactMethods = [
-    {
-      icon: MapPin,
-      title: "Visit Us",
-      details: "East Legon Hills, Accra",
-      color: "from-blue-500 to-blue-600",
-    },
-    {
-      icon: Phone,
-      title: "Call Us",
-      details: "+233 249 718 356",
-      details2: "+233 244 493 6551",
-      color: "from-slate-700 to-slate-800",
-    },
-    {
-      icon: Mail,
-      title: "Email Us",
-      details: "plasterproent@gmail.com",
-      color: "from-blue-600 to-slate-700",
-    },
-  ];
-
-  const faqs = [
-    {
-      question: "What is POP Ceiling Installation?",
-      answer:
-        "POP Ceiling Installation involves using high-quality Plaster of Paris to create elegant, modern ceilings that enhance interior spaces.",
-    },
-    {
-      question: "How do Room Lighting Solutions improve my space?",
-      answer:
-        "Our Room Lighting Solutions are designed to provide energy-efficient and stylish lighting, improving both the aesthetics and functionality of your space.",
-    },
-    {
-      question: "What services are included in Hardware Installation?",
-      answer:
-        "We offer expert installation of various building hardware, including ceiling frames, wall brackets, and other essential fittings to ensure your space is secure and visually appealing.",
-    },
-    {
-      question: "How can I book Repairs & Maintenance services?",
-      answer:
-        "You can easily contact us via our website form or email us directly to schedule repairs and maintenance for your ceilings, walls, or lighting fixtures.",
-    },
-  ];
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
@@ -312,7 +338,7 @@ function Contact() {
                       Monday - Friday
                     </span>
                     <span className="text-sm md:text-base text-gray-900 font-semibold">
-                      9:00 AM - 5:00 PM
+                      {mondayFridayHours}
                     </span>
                   </div>
                   <div className="flex justify-between items-center">
@@ -320,7 +346,7 @@ function Contact() {
                       Saturday
                     </span>
                     <span className="text-sm md:text-base text-gray-900 font-semibold">
-                      10:00 AM - 5:00 PM
+                      {saturdayHours}
                     </span>
                   </div>
                   <div className="flex justify-between items-center">
@@ -328,7 +354,7 @@ function Contact() {
                       Sunday
                     </span>
                     <span className="text-sm md:text-base text-gray-500">
-                      Closed
+                      {sundayStatus}
                     </span>
                   </div>
                 </div>
@@ -354,7 +380,7 @@ function Contact() {
           </div>
         </div>
 
-        {/* FAQ Section - Accordion Style */}
+        {/* FAQ Section */}
         <div className="mt-12 md:mt-16">
           <div className="text-center mb-8 md:mb-12">
             <h2 className="text-2xl md:text-4xl font-bold text-gray-900 mb-3 md:mb-4">
@@ -420,7 +446,7 @@ function Contact() {
           <button
             onClick={() => {
               window.open(
-                "https://wa.me/233249718356?text=Hi%2C%20I%20have%20a%20question",
+                `https://wa.me/${whatsappNumber}?text=Hi%2C%20I%20have%20a%20question`,
                 "_blank"
               );
             }}
