@@ -22,7 +22,6 @@ export function useSanity(query, params = {}) {
       })
       .catch((err) => {
         if (!cancelled) {
-          console.error("[Sanity] fetch error:", err);
           setError(err);
           setLoading(false);
         }
