@@ -19,7 +19,7 @@ const Home = () => {
       <Showcase />
       {/* <AboutInnovator /> */}
 
-      <Contact />
+      {/* <Contact /> */}
     </div>
   );
 };
