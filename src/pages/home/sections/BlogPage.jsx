@@ -1136,7 +1136,7 @@ const BlogPost = ({ postId }) => {
                     onClick={() => sharePost("facebook")}
                     className="flex items-center gap-3 w-full px-4 py-3 text-gray-700 hover:bg-gray-50 rounded-lg transition-colors"
                   >
-                    <div className="w-8 h-8 bg-blue-600 rounded flex items-center justify-center">
+                    <div className="w-8 h-8 bg-brand-600 rounded flex items-center justify-center">
                       <span className="text-white font-semibold text-xs">
                         f
                       </span>
@@ -1147,7 +1147,7 @@ const BlogPost = ({ postId }) => {
                     onClick={() => sharePost("linkedin")}
                     className="flex items-center gap-3 w-full px-4 py-3 text-gray-700 hover:bg-gray-50 rounded-lg transition-colors"
                   >
-                    <div className="w-8 h-8 bg-blue-800 rounded flex items-center justify-center">
+                    <div className="w-8 h-8 bg-brand-800 rounded flex items-center justify-center">
                       <span className="text-white font-semibold text-xs">
                         in
                       </span>

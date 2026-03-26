@@ -39,10 +39,10 @@ const Counter = ({ target, suffix, label, icon: Icon }) => {
 
   return (
     <div className="relative group">
-      <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-slate-700 rounded-2xl blur-xl opacity-10 group-hover:opacity-20 transition-opacity"></div>
+      <div className="absolute inset-0 bg-gradient-to-r from-brand-600 to-slate-700 rounded-2xl blur-xl opacity-10 group-hover:opacity-20 transition-opacity"></div>
       <div className="relative bg-white/90 backdrop-blur-sm p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-200">
         <div className="flex items-center justify-center mb-4">
-          <div className="p-3 bg-gradient-to-br from-blue-600 to-slate-700 rounded-full">
+          <div className="p-3 bg-gradient-to-br from-brand-600 to-slate-700 rounded-full">
             <Icon className="w-8 h-8 text-white" />
           </div>
         </div>
@@ -72,7 +72,7 @@ const AboutProduct = () => {
         "Decorative 3D Panels",
         "Metallic Channel Systems",
       ],
-      gradient: "from-blue-600 to-slate-700",
+      gradient: "from-brand-600 to-slate-700",
     },
     {
       icon: <ClipboardList className="w-8 h-8" />,
@@ -84,7 +84,7 @@ const AboutProduct = () => {
         "Site Inspection",
         "Budget Planning",
       ],
-      gradient: "from-slate-700 to-blue-600",
+      gradient: "from-slate-700 to-brand-600",
     },
     {
       icon: <RefreshCw className="w-8 h-8" />,
@@ -96,7 +96,7 @@ const AboutProduct = () => {
         "Acoustic Upgrades",
         "Preventive Plans",
       ],
-      gradient: "from-blue-500 to-slate-600",
+      gradient: "from-brand-500 to-slate-600",
     },
   ];
 
@@ -125,10 +125,10 @@ const AboutProduct = () => {
     <div className="bg-gradient-to-b from-white via-slate-50/30 to-white">
       {/* Hero Section */}
       <section className="relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-slate-800 via-blue-900 to-slate-900 opacity-95"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-slate-800 via-brand-900 to-slate-900 opacity-95"></div>
         <div className="absolute inset-0">
-          <div className="absolute top-0 left-0 w-72 h-72 bg-blue-500/10 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-0 right-0 w-72 h-72 bg-blue-500/10 rounded-full blur-3xl"></div>
+          <div className="absolute top-0 left-0 w-72 h-72 bg-brand-500/10 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-0 right-0 w-72 h-72 bg-brand-500/10 rounded-full blur-3xl"></div>
         </div>
 
         <div className="relative max-w-6xl mx-auto text-center px-4 py-12 md:py-24">
@@ -139,7 +139,7 @@ const AboutProduct = () => {
 
           <h1 className="text-2xl md:text-5xl font-bold mb-3 md:mb-4 leading-tight text-white">
             Premium Ceiling & Wall
-            <span className="block text-blue-400">Solutions</span>
+            <span className="block text-brand-400">Solutions</span>
           </h1>
 
           <p className="text-base md:text-xl mb-6 md:mb-8 max-w-2xl mx-auto text-gray-300 leading-relaxed">
@@ -163,7 +163,7 @@ const AboutProduct = () => {
       {/* Services Section */}
       <section className="py-24 px-4 max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <div className="inline-block bg-blue-100 px-4 py-2 rounded-full text-sm font-semibold text-blue-700 mb-4">
+          <div className="inline-block bg-brand-100 px-4 py-2 rounded-full text-sm font-semibold text-brand-700 mb-4">
             What We Offer
           </div>
           <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4">
@@ -223,7 +223,7 @@ const AboutProduct = () => {
 
       {/* Stats Section */}
       <section className="relative py-20 px-4 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-slate-800 via-blue-900 to-slate-900"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-slate-800 via-brand-900 to-slate-900"></div>
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-white/20 via-transparent to-transparent"></div>
         </div>
@@ -265,7 +265,7 @@ const AboutProduct = () => {
       <section className="py-24 px-4">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <div className="inline-block bg-blue-100 px-4 py-2 rounded-full text-sm font-semibold text-blue-700 mb-4">
+            <div className="inline-block bg-brand-100 px-4 py-2 rounded-full text-sm font-semibold text-brand-700 mb-4">
               Client Reviews
             </div>
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
@@ -282,7 +282,7 @@ const AboutProduct = () => {
                 key={index}
                 className="group relative bg-white p-8 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100"
               >
-                <div className="absolute -top-4 -right-4 w-20 h-20 bg-gradient-to-br from-blue-600 to-slate-700 rounded-full opacity-10 group-hover:opacity-20 transition-opacity"></div>
+                <div className="absolute -top-4 -right-4 w-20 h-20 bg-gradient-to-br from-brand-600 to-slate-700 rounded-full opacity-10 group-hover:opacity-20 transition-opacity"></div>
 
                 <div className="relative">
                   <div className="flex items-center gap-1 mb-4">
@@ -299,7 +299,7 @@ const AboutProduct = () => {
                   </p>
 
                   <div className="flex items-center gap-4 pt-6 border-t border-gray-100">
-                    <div className="w-12 h-12 bg-gradient-to-br from-blue-600 to-slate-700 rounded-full flex items-center justify-center text-white font-bold text-xl">
+                    <div className="w-12 h-12 bg-gradient-to-br from-brand-600 to-slate-700 rounded-full flex items-center justify-center text-white font-bold text-xl">
                       {testimonial.author.charAt(0)}
                     </div>
                     <div>
@@ -322,7 +322,7 @@ const AboutProduct = () => {
       {/* CTA Section */}
       <section className="py-20 px-4">
         <div className="max-w-4xl mx-auto">
-          <div className="relative overflow-hidden bg-gradient-to-br from-slate-800 via-blue-900 to-slate-900 rounded-3xl p-12 text-center shadow-2xl">
+          <div className="relative overflow-hidden bg-gradient-to-br from-slate-800 via-brand-900 to-slate-900 rounded-3xl p-12 text-center shadow-2xl">
             <div className="absolute inset-0 opacity-10">
               <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-white/40 via-transparent to-transparent"></div>
             </div>

@@ -14,7 +14,7 @@ const AboutInnovator = () => {
     <div className="bg-gradient-to-b from-white to-gray-50">
       {/* Hero Section */}
       <div className="relative overflow-hidden">
-        {/* <div className="absolute inset-0 bg-blue-900 opacity-80">
+        {/* <div className="absolute inset-0 bg-brand-900 opacity-80">
           <img
             src={CEO}
             alt="PlasterPro Ghana Office"
@@ -23,7 +23,7 @@ const AboutInnovator = () => {
         </div> */}
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-20 lg:py-24 text-center">
           <h1 className="text-2xl md:text-3xl lg:text-5xl font-extrabold text-gray-950 tracking-tight mb-4">
-            About <span className="text-blue-500">PlasterPro Ghana</span>
+            About <span className="text-brand-500">PlasterPro Ghana</span>
           </h1>
           <p className="max-w-3xl mx-auto text-base md:text-lg lg:text-xl text-gray-900">
             Transforming spaces with premium ceiling and wall finishing
@@ -45,12 +45,12 @@ const AboutInnovator = () => {
           <div>
             <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6 relative">
               <span className="relative z-10">Our Journey</span>
-              {/* <span className="absolute bottom-0 left-0 h-1 w-24 bg-blue-400"></span> */}
+              {/* <span className="absolute bottom-0 left-0 h-1 w-24 bg-brand-400"></span> */}
             </h2>
             <p className="text-sm md:text-base lg:text-lg text-gray-700 mb-4 leading-relaxed">
               Established in{" "}
-              <span className="font-semibold text-blue-900">August 2023</span>,{" "}
-              <span className="font-semibold text-blue-900">
+              <span className="font-semibold text-brand-900">August 2023</span>,{" "}
+              <span className="font-semibold text-brand-900">
                 PlasterPro Ghana
               </span>{" "}
               was founded with a vision to revolutionize the ceiling and wall
@@ -63,22 +63,22 @@ const AboutInnovator = () => {
               for both wholesale and retail customers across Ghana.
             </p>
             <div className="flex flex-wrap gap-3">
-              <span className="px-4 py-2 bg-blue-100 text-blue-800 rounded-full text-sm font-medium">
+              <span className="px-4 py-2 bg-brand-100 text-brand-800 rounded-full text-sm font-medium">
                 POP Cement
               </span>
-              <span className="px-4 py-2 bg-blue-100 text-blue-800 rounded-full text-sm font-medium">
+              <span className="px-4 py-2 bg-brand-100 text-brand-800 rounded-full text-sm font-medium">
                 Plasterboard
               </span>
-              <span className="px-4 py-2 bg-blue-100 text-blue-800 rounded-full text-sm font-medium">
+              <span className="px-4 py-2 bg-brand-100 text-brand-800 rounded-full text-sm font-medium">
                 Fiber Ceilings
               </span>
-              <span className="px-4 py-2 bg-blue-100 text-blue-800 rounded-full text-sm font-medium">
+              <span className="px-4 py-2 bg-brand-100 text-brand-800 rounded-full text-sm font-medium">
                 Acoustic Solutions
               </span>
-              <span className="px-4 py-2 bg-blue-100 text-blue-800 rounded-full text-sm font-medium">
+              <span className="px-4 py-2 bg-brand-100 text-brand-800 rounded-full text-sm font-medium">
                 Decorative Panels
               </span>
-              <span className="px-4 py-2 bg-blue-100 text-blue-800 rounded-full text-sm font-medium">
+              <span className="px-4 py-2 bg-brand-100 text-brand-800 rounded-full text-sm font-medium">
                 Premium Paints
               </span>
             </div>
@@ -87,7 +87,7 @@ const AboutInnovator = () => {
       </div>
 
       {/* Mission & Vision Section */}
-      <div className="bg-blue-900 py-16">
+      <div className="bg-brand-900 py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="lg:grid lg:grid-cols-2 lg:gap-16">
             <div className="mb-12 lg:mb-0">
@@ -95,7 +95,7 @@ const AboutInnovator = () => {
                 <div className="w-12 h-12 bg-gray-50 rounded-full flex items-center justify-center mr-4">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    className="h-6 w-6 text-blue-900"
+                    className="h-6 w-6 text-brand-900"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
@@ -115,7 +115,7 @@ const AboutInnovator = () => {
               <div className="bg-[rgba(17,25,40,0.60)] border border-white/10 backdrop-saturate-180 backdrop-blur-lg p-6 rounded-xl text-white">
                 <p className="text-sm md:text-base lg:text-lg leading-relaxed">
                   At{" "}
-                  <span className="font-semibold text-blue-400">
+                  <span className="font-semibold text-brand-400">
                     PlasterPro Ghana
                   </span>
                   , our mission is to deliver superior ceiling and wall
@@ -131,7 +131,7 @@ const AboutInnovator = () => {
                 <div className="w-12 h-12 bg-gray-50 rounded-full flex items-center justify-center mr-4">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    className="h-6 w-6 text-blue-900"
+                    className="h-6 w-6 text-brand-900"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
@@ -157,7 +157,7 @@ const AboutInnovator = () => {
               <div className="bg-[rgba(17,25,40,0.60)] border border-white/10 backdrop-saturate-180 backdrop-blur-lg p-6 md:p-8 rounded-xl text-white">
                 <p className="text-sm md:text-base lg:text-lg leading-relaxed">
                   We strive to become{" "}
-                  <span className="font-semibold text-blue-400">
+                  <span className="font-semibold text-brand-400">
                     the No.1 distributor
                   </span>{" "}
                   of premium ceiling and wall finishing materials and
@@ -174,12 +174,12 @@ const AboutInnovator = () => {
       {/* Core Values Section */}
       <div className="py-12 md:py-16 bg-gradient-to-b from-gray-50 to-white relative overflow-hidden">
         {/* Background decoration */}
-        <div className="absolute top-0 left-0 w-72 h-72 bg-blue-100 rounded-full blur-3xl opacity-20"></div>
-        <div className="absolute bottom-0 right-0 w-72 h-72 bg-blue-100 rounded-full blur-3xl opacity-20"></div>
+        <div className="absolute top-0 left-0 w-72 h-72 bg-brand-100 rounded-full blur-3xl opacity-20"></div>
+        <div className="absolute bottom-0 right-0 w-72 h-72 bg-brand-100 rounded-full blur-3xl opacity-20"></div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-10 md:mb-12">
-            <div className="inline-flex items-center gap-2 bg-blue-100 px-4 py-2 rounded-full text-sm font-medium text-blue-700 mb-4">
+            <div className="inline-flex items-center gap-2 bg-brand-100 px-4 py-2 rounded-full text-sm font-medium text-brand-700 mb-4">
               <span className="text-xl">✨</span>
               <span>What Defines Us</span>
             </div>
@@ -204,7 +204,7 @@ const AboutInnovator = () => {
                 title: "Innovation",
                 description:
                   "We embrace new technologies and designs to stay ahead in the industry.",
-                gradient: "from-blue-400 to-blue-600",
+                gradient: "from-brand-400 to-brand-600",
               },
               {
                 icon: "🤝",
@@ -232,7 +232,7 @@ const AboutInnovator = () => {
                 title: "Attention to Detail",
                 description:
                   "We believe that perfect finishes come from meticulous attention to every detail.",
-                gradient: "from-indigo-400 to-blue-500",
+                gradient: "from-indigo-400 to-brand-500",
               },
             ].map((value, index) => (
               <motion.div
@@ -269,7 +269,7 @@ const AboutInnovator = () => {
           <div className="text-center mb-16">
             <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2 relative inline-block">
               Meet Our CEO
-              {/* <span className="absolute bottom-0 left-0 h-1 w-24 bg-blue-400 rounded-full"></span> */}
+              {/* <span className="absolute bottom-0 left-0 h-1 w-24 bg-brand-400 rounded-full"></span> */}
             </h2>
             <p className="text-base md:text-lg lg:text-xl text-gray-600">
               The brain behind our success
@@ -292,7 +292,7 @@ const AboutInnovator = () => {
                 <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">
                   Betty Baffour Awuah
                 </h3>
-                <p className="text-base md:text-lg lg:text-xl font-semibold text-blue-600 mb-4">
+                <p className="text-base md:text-lg lg:text-xl font-semibold text-brand-600 mb-4">
                   CEO & Founder - Leading with excellence in POP solutions and
                   customer satisfaction
                 </p>
@@ -312,7 +312,7 @@ const AboutInnovator = () => {
                 <div className="flex mt-6 space-x-4">
                   <a
                     href="#"
-                    className="w-10 h-10 rounded-full bg-blue-600 flex items-center justify-center text-white"
+                    className="w-10 h-10 rounded-full bg-brand-600 flex items-center justify-center text-white"
                   >
                     <svg
                       className="h-5 w-5"
@@ -324,7 +324,7 @@ const AboutInnovator = () => {
                   </a>
                   <a
                     href="#"
-                    className="w-10 h-10 rounded-full bg-blue-400 flex items-center justify-center text-white"
+                    className="w-10 h-10 rounded-full bg-brand-400 flex items-center justify-center text-white"
                   >
                     <svg
                       className="h-5 w-5"
@@ -336,7 +336,7 @@ const AboutInnovator = () => {
                   </a>
                   <a
                     href="#"
-                    className="w-10 h-10 rounded-full bg-blue-800 flex items-center justify-center text-white"
+                    className="w-10 h-10 rounded-full bg-brand-800 flex items-center justify-center text-white"
                   >
                     <svg
                       className="h-5 w-5"
@@ -380,7 +380,7 @@ const AboutInnovator = () => {
                 key={index}
                 className="bg-white rounded-xl overflow-hidden shadow-lg transform transition duration-300 hover:scale-105 hover:shadow-xl"
               >
-                <div className="h-3 bg-blue-600"></div>
+                <div className="h-3 bg-brand-600"></div>
                 <div className="p-2">
                   <img
                     src={member.image}
@@ -391,7 +391,7 @@ const AboutInnovator = () => {
                     <h3 className="text-xl font-bold text-gray-900 mb-1">
                       {member.name}
                     </h3>
-                    <p className="text-blue-600 font-medium mb-3">
+                    <p className="text-brand-600 font-medium mb-3">
                       {member.role}
                     </p>
                     <p className="text-gray-600">{member.description}</p>
@@ -402,13 +402,13 @@ const AboutInnovator = () => {
           </div> */}
 
           {/* Installation Team */}
-          <div className="mt-12 md:mt-16 bg-gradient-to-r from-blue-900 to-blue-700 rounded-xl md:rounded-2xl overflow-hidden shadow-xl">
+          <div className="mt-12 md:mt-16 bg-gradient-to-r from-brand-900 to-brand-700 rounded-xl md:rounded-2xl overflow-hidden shadow-xl">
             <div className="lg:grid lg:grid-cols-5 lg:gap-0">
               <div className="p-6 md:p-10 flex flex-col justify-center order-2 lg:order-1 lg:col-span-3">
                 <h3 className="text-xl md:text-2xl font-bold text-white mb-4 md:mb-6">
                   Skilled Technicians & Installers
                 </h3>
-                <p className="text-base md:text-lg text-blue-100 mb-6 md:mb-8 leading-relaxed">
+                <p className="text-base md:text-lg text-brand-100 mb-6 md:mb-8 leading-relaxed">
                   Our team of dedicated experts specializes in POP ceiling
                   installations, plasterboard fitting, acoustic ceiling
                   solutions, and more! Watch us in action transforming spaces.
@@ -439,7 +439,7 @@ const AboutInnovator = () => {
                 >
                   Your browser does not support the video tag.
                 </video>
-                <div className="absolute inset-0 bg-gradient-to-t from-blue-900/50 to-transparent lg:hidden"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-brand-900/50 to-transparent lg:hidden"></div>
               </div>
             </div>
           </div>
@@ -447,7 +447,7 @@ const AboutInnovator = () => {
       </div>
 
       {/* Call To Action */}
-      <div className="relative bg-gradient-to-r from-blue-400 to-blue-500 py-16">
+      <div className="relative bg-gradient-to-r from-brand-400 to-brand-500 py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
             Join the growing number of clients who trust PlasterPro Ghana!
@@ -459,13 +459,13 @@ const AboutInnovator = () => {
           <div className="flex flex-wrap justify-center gap-4">
             <Link
               to="/contact"
-              className="bg-white text-blue-500 hover:bg-blue-900 hover:text-white font-bold py-3 px-6 md:py-4 md:px-8 rounded-full shadow-lg transition duration-300 transform hover:scale-105"
+              className="bg-white text-brand-500 hover:bg-brand-900 hover:text-white font-bold py-3 px-6 md:py-4 md:px-8 rounded-full shadow-lg transition duration-300 transform hover:scale-105"
             >
               Contact Us Today
             </Link>
             <Link
               to="/projects"
-              className="bg-blue-900 text-white hover:bg-white hover:text-blue-900 font-bold py-3 px-6 md:py-4 md:px-8 rounded-full shadow-lg transition duration-300 transform hover:scale-105"
+              className="bg-brand-900 text-white hover:bg-white hover:text-brand-900 font-bold py-3 px-6 md:py-4 md:px-8 rounded-full shadow-lg transition duration-300 transform hover:scale-105"
             >
               View Our Projects
             </Link>

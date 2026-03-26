@@ -171,12 +171,12 @@ const ProjectsPage = () => {
   return (
     <div className="bg-white">
       {/* Enhanced Hero Section */}
-      <section className="relative bg-gradient-to-r from-gray-900 to-blue-900 text-white py-28 overflow-hidden">
+      <section className="relative bg-gradient-to-r from-gray-900 to-brand-900 text-white py-28 overflow-hidden">
         <div className="absolute inset-0 bg-black opacity-50"></div>
         <div className="absolute top-0 left-0 w-full h-full">
-          <div className="absolute top-20 left-10 w-4 h-4 bg-blue-400 rounded-full opacity-70"></div>
-          <div className="absolute top-40 right-20 w-6 h-6 bg-blue-300 rounded-full opacity-50"></div>
-          <div className="absolute bottom-20 left-1/4 w-8 h-8 bg-blue-500 rounded-full opacity-30"></div>
+          <div className="absolute top-20 left-10 w-4 h-4 bg-brand-400 rounded-full opacity-70"></div>
+          <div className="absolute top-40 right-20 w-6 h-6 bg-brand-300 rounded-full opacity-50"></div>
+          <div className="absolute bottom-20 left-1/4 w-8 h-8 bg-brand-500 rounded-full opacity-30"></div>
         </div>
         <div className="container mx-auto px-4 relative z-10">
           <motion.div
@@ -185,14 +185,14 @@ const ProjectsPage = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-center max-w-4xl mx-auto"
           >
-            <div className="inline-flex items-center px-4 py-2 rounded-full bg-blue-600 bg-opacity-20 border border-blue-400 border-opacity-30 text-blue-200 text-sm mb-6">
-              <span className="w-2 h-2 bg-blue-400 rounded-full mr-2 animate-pulse"></span>
+            <div className="inline-flex items-center px-4 py-2 rounded-full bg-brand-600 bg-opacity-20 border border-brand-400 border-opacity-30 text-brand-200 text-sm mb-6">
+              <span className="w-2 h-2 bg-brand-400 rounded-full mr-2 animate-pulse"></span>
               Showcasing Excellence in Ceiling Solutions
             </div>
             <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
-              Our <span className="text-blue-400">Portfolio</span>
+              Our <span className="text-brand-400">Portfolio</span>
             </h1>
-            <p className="text-xl md:text-2xl text-blue-100 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xl md:text-2xl text-brand-100 max-w-3xl mx-auto leading-relaxed">
               Witness the transformation we bring to spaces through exceptional
               craftsmanship, innovative designs, and premium quality materials.
             </p>
@@ -206,17 +206,17 @@ const ProjectsPage = () => {
           transition={{ delay: 1.5 }}
           className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
         >
-          <div className="flex flex-col items-center text-blue-200">
+          <div className="flex flex-col items-center text-brand-200">
             <span className="text-sm mb-2">Scroll to Explore</span>
             <motion.div
               animate={{ y: [0, 10, 0] }}
               transition={{ duration: 2, repeat: Infinity }}
-              className="w-6 h-10 border-2 border-blue-300 rounded-full flex justify-center"
+              className="w-6 h-10 border-2 border-brand-300 rounded-full flex justify-center"
             >
               <motion.div
                 animate={{ y: [0, 12, 0] }}
                 transition={{ duration: 2, repeat: Infinity }}
-                className="w-1 h-3 bg-blue-300 rounded-full mt-2"
+                className="w-1 h-3 bg-brand-300 rounded-full mt-2"
               />
             </motion.div>
           </div>
@@ -241,7 +241,7 @@ const ProjectsPage = () => {
               >
                 <motion.div
                   whileHover={{ scale: 1.05 }}
-                  className="bg-gradient-to-br from-blue-50 to-white p-6 rounded-2xl shadow-sm border border-gray-100"
+                  className="bg-gradient-to-br from-brand-50 to-white p-6 rounded-2xl shadow-sm border border-gray-100"
                 >
                   <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-2">
                     {stat.number}
@@ -265,11 +265,11 @@ const ProjectsPage = () => {
             className="max-w-5xl mx-auto"
           >
             <motion.div variants={itemVariants} className="text-center mb-16">
-              <h2 className="text-4xl font-bold mb-6 bg-gradient-to-r from-gray-800 to-blue-700 bg-clip-text text-transparent">
+              <h2 className="text-4xl font-bold mb-6 bg-gradient-to-r from-gray-800 to-brand-700 bg-clip-text text-transparent">
                 Excellence in Every Detail
               </h2>
               <p className="text-xl text-gray-700 leading-relaxed">
-                At <strong className="text-blue-600">PlasterPro Ghana</strong>,
+                At <strong className="text-brand-600">PlasterPro Ghana</strong>,
                 we transform ordinary spaces into extraordinary environments.
                 Our portfolio showcases residential, commercial, and industrial
                 projects that highlight our expertise in innovative ceiling and
@@ -334,7 +334,7 @@ const ProjectsPage = () => {
           >
             <motion.h2
               variants={itemVariants}
-              className="text-4xl font-bold mb-4 bg-gradient-to-r from-gray-800 to-blue-700 bg-clip-text text-transparent"
+              className="text-4xl font-bold mb-4 bg-gradient-to-r from-gray-800 to-brand-700 bg-clip-text text-transparent"
             >
               Project Gallery
             </motion.h2>
@@ -364,7 +364,7 @@ const ProjectsPage = () => {
                 whileTap={{ scale: 0.95 }}
                 className={`px-6 py-3 rounded-xl transition-all duration-300 font-medium flex items-center space-x-2 ${
                   activeGalleryTab === category.id
-                    ? "bg-blue-600 text-white shadow-lg shadow-blue-200"
+                    ? "bg-brand-600 text-white shadow-lg shadow-brand-200"
                     : "bg-gray-100 text-gray-700 hover:bg-gray-200 hover:shadow-md"
                 }`}
                 onClick={() => setActiveGalleryTab(category.id)}
@@ -373,7 +373,7 @@ const ProjectsPage = () => {
                 <span
                   className={`px-2 py-1 text-xs rounded-full ${
                     activeGalleryTab === category.id
-                      ? "bg-blue-500"
+                      ? "bg-brand-500"
                       : "bg-gray-300"
                   }`}
                 >
@@ -422,7 +422,7 @@ const ProjectsPage = () => {
                         </span>
                       )}
                       {item.featured && (
-                        <span className="bg-blue-500 text-white px-3 py-1 rounded-full text-xs font-semibold shadow-lg">
+                        <span className="bg-brand-500 text-white px-3 py-1 rounded-full text-xs font-semibold shadow-lg">
                           Featured
                         </span>
                       )}
@@ -432,13 +432,13 @@ const ProjectsPage = () => {
                     <motion.div
                       initial={{ opacity: 0 }}
                       whileHover={{ opacity: 1 }}
-                      className="absolute inset-0 bg-blue-600 bg-opacity-90 flex items-center justify-center"
+                      className="absolute inset-0 bg-brand-600 bg-opacity-90 flex items-center justify-center"
                     >
                       <div className="text-white text-center p-4">
                         <div className="text-2xl font-bold mb-2">
                           View Project
                         </div>
-                        <div className="text-blue-100">
+                        <div className="text-brand-100">
                           Click to see full details
                         </div>
                       </div>
@@ -447,7 +447,7 @@ const ProjectsPage = () => {
 
                   <div className="p-6">
                     <div className="flex justify-between items-start mb-3">
-                      <h3 className="text-xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors duration-300">
+                      <h3 className="text-xl font-bold text-gray-900 group-hover:text-brand-600 transition-colors duration-300">
                         {item.title}
                       </h3>
                       <span className="text-xs font-medium px-2 py-1 bg-gray-100 text-gray-600 rounded-full">
@@ -462,7 +462,7 @@ const ProjectsPage = () => {
                     <div className="space-y-2 text-sm text-gray-600">
                       <div className="flex items-center">
                         <svg
-                          className="w-4 h-4 mr-2 text-blue-500"
+                          className="w-4 h-4 mr-2 text-brand-500"
                           fill="currentColor"
                           viewBox="0 0 20 20"
                         >
@@ -477,7 +477,7 @@ const ProjectsPage = () => {
                       <div className="flex items-center justify-between">
                         <div className="flex items-center">
                           <svg
-                            className="w-4 h-4 mr-2 text-blue-500"
+                            className="w-4 h-4 mr-2 text-brand-500"
                             fill="none"
                             stroke="currentColor"
                             viewBox="0 0 24 24"
@@ -493,7 +493,7 @@ const ProjectsPage = () => {
                         </div>
                         <div className="flex items-center">
                           <svg
-                            className="w-4 h-4 mr-2 text-blue-500"
+                            className="w-4 h-4 mr-2 text-brand-500"
                             fill="none"
                             stroke="currentColor"
                             viewBox="0 0 24 24"
@@ -523,7 +523,7 @@ const ProjectsPage = () => {
             transition={{ delay: 0.5 }}
             className="text-center mt-12"
           >
-            <button className="bg-white text-blue-600 font-semibold py-3 px-8 rounded-xl border border-blue-200 hover:bg-blue-50 hover:shadow-md transition-all duration-300 flex items-center mx-auto">
+            <button className="bg-white text-brand-600 font-semibold py-3 px-8 rounded-xl border border-brand-200 hover:bg-brand-50 hover:shadow-md transition-all duration-300 flex items-center mx-auto">
               Load More Projects
               <svg
                 className="w-5 h-5 ml-2"
@@ -555,7 +555,7 @@ const ProjectsPage = () => {
           >
             <motion.h2
               variants={itemVariants}
-              className="text-4xl font-bold mb-4 bg-gradient-to-r from-gray-800 to-blue-700 bg-clip-text text-transparent"
+              className="text-4xl font-bold mb-4 bg-gradient-to-r from-gray-800 to-brand-700 bg-clip-text text-transparent"
             >
               Our Specializations
             </motion.h2>
@@ -642,9 +642,9 @@ const ProjectsPage = () => {
                     alt={category.title}
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                   />
-                  <div className="absolute inset-0 bg-blue-900 bg-opacity-20"></div>
+                  <div className="absolute inset-0 bg-brand-900 bg-opacity-20"></div>
                 </div>
-                <h3 className="text-2xl font-bold mb-4 text-gray-900 group-hover:text-blue-600 transition-colors duration-300">
+                <h3 className="text-2xl font-bold mb-4 text-gray-900 group-hover:text-brand-600 transition-colors duration-300">
                   {category.title}
                 </h3>
                 <p className="text-gray-700 mb-6 leading-relaxed">
@@ -654,7 +654,7 @@ const ProjectsPage = () => {
                   {category.features.map((feature, featureIndex) => (
                     <span
                       key={featureIndex}
-                      className="px-3 py-1 bg-blue-50 text-blue-600 rounded-full text-sm font-medium border border-blue-100"
+                      className="px-3 py-1 bg-brand-50 text-brand-600 rounded-full text-sm font-medium border border-brand-100"
                     >
                       {feature}
                     </span>
@@ -678,7 +678,7 @@ const ProjectsPage = () => {
           >
             <motion.h2
               variants={itemVariants}
-              className="text-4xl font-bold mb-4 bg-gradient-to-r from-gray-800 to-blue-700 bg-clip-text text-transparent"
+              className="text-4xl font-bold mb-4 bg-gradient-to-r from-gray-800 to-brand-700 bg-clip-text text-transparent"
             >
               Project Case Studies
             </motion.h2>
@@ -697,7 +697,7 @@ const ProjectsPage = () => {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            className="bg-gradient-to-br from-white to-blue-50 rounded-3xl overflow-hidden shadow-2xl border border-gray-100 max-w-6xl mx-auto"
+            className="bg-gradient-to-br from-white to-brand-50 rounded-3xl overflow-hidden shadow-2xl border border-gray-100 max-w-6xl mx-auto"
           >
             <div className="md:flex">
               <div className="md:w-2/5 relative">
@@ -706,7 +706,7 @@ const ProjectsPage = () => {
                   alt="Luxury Apartment Complex Ceiling Installation"
                   className="w-full h-80 md:h-full object-cover"
                 />
-                <div className="absolute inset-0 bg-blue-900 bg-opacity-20"></div>
+                <div className="absolute inset-0 bg-brand-900 bg-opacity-20"></div>
               </div>
 
               <div className="md:w-3/5 p-8 md:p-12">
@@ -714,7 +714,7 @@ const ProjectsPage = () => {
                   variants={itemVariants}
                   className="flex items-center mb-6"
                 >
-                  <div className="px-4 py-2 bg-blue-100 text-blue-600 rounded-full text-sm font-semibold">
+                  <div className="px-4 py-2 bg-brand-100 text-brand-600 rounded-full text-sm font-semibold">
                     Featured Case Study
                   </div>
                   <div className="ml-4 text-sm text-gray-500">
@@ -765,7 +765,7 @@ const ProjectsPage = () => {
                   <div className="space-y-6">
                     <div>
                       <h4 className="font-bold text-lg mb-3 text-gray-900 flex items-center">
-                        <span className="w-2 h-2 bg-blue-500 rounded-full mr-3"></span>
+                        <span className="w-2 h-2 bg-brand-500 rounded-full mr-3"></span>
                         Project Challenges
                       </h4>
                       <p className="text-gray-700 leading-relaxed">
@@ -808,7 +808,7 @@ const ProjectsPage = () => {
                 <motion.button
                   variants={itemVariants}
                   onClick={() => setExpandedCaseStudy(!expandedCaseStudy)}
-                  className="mt-6 text-blue-600 hover:text-blue-800 font-semibold flex items-center group"
+                  className="mt-6 text-brand-600 hover:text-brand-800 font-semibold flex items-center group"
                 >
                   {expandedCaseStudy ? "Show Less" : "Read Full Case Study"}
                   <svg
@@ -834,7 +834,7 @@ const ProjectsPage = () => {
       </section>
 
       {/* Enhanced Testimonials */}
-      <section className="py-20 bg-gradient-to-b from-gray-50 to-blue-50">
+      <section className="py-20 bg-gradient-to-b from-gray-50 to-brand-50">
         <div className="container mx-auto px-4">
           <motion.div
             variants={containerVariants}
@@ -845,7 +845,7 @@ const ProjectsPage = () => {
           >
             <motion.h2
               variants={itemVariants}
-              className="text-4xl font-bold mb-4 bg-gradient-to-r from-gray-800 to-blue-700 bg-clip-text text-transparent"
+              className="text-4xl font-bold mb-4 bg-gradient-to-r from-gray-800 to-brand-700 bg-clip-text text-transparent"
             >
               Client Testimonials
             </motion.h2>
@@ -904,7 +904,7 @@ const ProjectsPage = () => {
                 className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl border border-gray-100 transition-all duration-300"
               >
                 <div className="flex items-center mb-6">
-                  <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center text-white font-bold text-lg mr-4">
+                  <div className="w-16 h-16 bg-gradient-to-br from-brand-500 to-brand-600 rounded-full flex items-center justify-center text-white font-bold text-lg mr-4">
                     {testimonial.image}
                   </div>
                   <div>
@@ -912,7 +912,7 @@ const ProjectsPage = () => {
                       {testimonial.name}
                     </h4>
                     <p className="text-gray-600 text-sm">{testimonial.role}</p>
-                    <p className="text-blue-600 text-sm font-medium">
+                    <p className="text-brand-600 text-sm font-medium">
                       {testimonial.company}
                     </p>
                   </div>
@@ -950,7 +950,7 @@ const ProjectsPage = () => {
             viewport={{ once: true }}
             className="text-center mt-12"
           >
-            <button className="bg-white text-blue-600 font-semibold py-3 px-8 rounded-xl border border-blue-200 hover:bg-blue-50 hover:shadow-md transition-all duration-300 inline-flex items-center">
+            <button className="bg-white text-brand-600 font-semibold py-3 px-8 rounded-xl border border-brand-200 hover:bg-brand-50 hover:shadow-md transition-all duration-300 inline-flex items-center">
               <svg
                 className="w-5 h-5 mr-2"
                 fill="none"
@@ -977,7 +977,7 @@ const ProjectsPage = () => {
       </section>
 
       {/* Enhanced CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-blue-600 to-blue-800 text-white relative overflow-hidden">
+      <section className="py-20 bg-gradient-to-r from-brand-600 to-brand-800 text-white relative overflow-hidden">
         {/* Background decoration */}
         <div className="absolute top-0 left-0 w-full h-full">
           <div className="absolute top-10 right-10 w-32 h-32 bg-white bg-opacity-10 rounded-full"></div>
@@ -1001,7 +1001,7 @@ const ProjectsPage = () => {
             </motion.h2>
             <motion.p
               variants={itemVariants}
-              className="text-xl md:text-2xl text-blue-100 mb-8 leading-relaxed"
+              className="text-xl md:text-2xl text-brand-100 mb-8 leading-relaxed"
             >
               Let's discuss your vision and create a ceiling solution that
               exceeds your expectations while staying within your budget and
@@ -1014,7 +1014,7 @@ const ProjectsPage = () => {
             >
               <Link
                 to="/contact"
-                className="bg-white text-blue-600 font-bold py-4 px-8 rounded-xl shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 inline-flex items-center"
+                className="bg-white text-brand-600 font-bold py-4 px-8 rounded-xl shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 inline-flex items-center"
               >
                 <svg
                   className="w-5 h-5 mr-2"
@@ -1032,7 +1032,7 @@ const ProjectsPage = () => {
                 Get Free Consultation
               </Link>
 
-              <button className="border-2 border-white text-white font-bold py-4 px-8 rounded-xl hover:bg-white hover:text-blue-600 transition-all duration-300 inline-flex items-center">
+              <button className="border-2 border-white text-white font-bold py-4 px-8 rounded-xl hover:bg-white hover:text-brand-600 transition-all duration-300 inline-flex items-center">
                 <svg
                   className="w-5 h-5 mr-2"
                   fill="none"
@@ -1052,7 +1052,7 @@ const ProjectsPage = () => {
 
             <motion.p
               variants={itemVariants}
-              className="text-blue-200 mt-8 text-sm"
+              className="text-brand-200 mt-8 text-sm"
             >
               ⚡ Quick response within 2 hours • 📞 24/7 customer support • 💰
               Competitive pricing

@@ -103,7 +103,7 @@ const Showcase = () => {
                     />
                   )}
                   {selectedItem.badge && (
-                    <div className="absolute top-3 left-3 bg-blue-600 text-white px-4 py-1.5 rounded-full text-xs font-semibold shadow-lg">
+                    <div className="absolute top-3 left-3 bg-brand-600 text-white px-4 py-1.5 rounded-full text-xs font-semibold shadow-lg">
                       {selectedItem.badge}
                     </div>
                   )}
@@ -117,7 +117,7 @@ const Showcase = () => {
                         onClick={() => setSelectedImageIndex(index)}
                         className={`relative h-20 rounded-lg overflow-hidden cursor-pointer transition-all ${
                           selectedImageIndex === index
-                            ? "ring-2 ring-blue-600 ring-offset-2"
+                            ? "ring-2 ring-brand-600 ring-offset-2"
                             : "ring-1 ring-gray-200 hover:ring-gray-400"
                         }`}
                       >
@@ -177,7 +177,7 @@ const Showcase = () => {
                         "_blank"
                       );
                     }}
-                    className="w-full px-6 py-4 rounded-lg font-semibold bg-blue-600 text-white hover:bg-blue-700 hover:shadow-lg transition-all duration-300 text-lg"
+                    className="w-full px-6 py-4 rounded-lg font-semibold bg-brand-600 text-white hover:bg-brand-700 hover:shadow-lg transition-all duration-300 text-lg"
                   >
                     Contact Us for Details
                   </button>
@@ -230,13 +230,13 @@ const Showcase = () => {
                   />
                 )}
                 {item.badge && (
-                  <div className="absolute top-3 left-3 bg-blue-600 text-white px-3 py-1 rounded-full text-xs font-semibold shadow-md">
+                  <div className="absolute top-3 left-3 bg-brand-600 text-white px-3 py-1 rounded-full text-xs font-semibold shadow-md">
                     {item.badge}
                   </div>
                 )}
-                <div className="absolute inset-0 bg-gradient-to-t from-blue-900/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <div className="absolute inset-0 bg-gradient-to-t from-brand-900/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <div className="absolute bottom-0 left-0 right-0 p-5 flex items-center justify-center">
-                    <span className="bg-blue-600 text-white px-5 py-2 rounded-lg font-medium shadow-lg">
+                    <span className="bg-brand-600 text-white px-5 py-2 rounded-lg font-medium shadow-lg">
                       Quick View
                     </span>
                   </div>
@@ -253,7 +253,7 @@ const Showcase = () => {
                 <div className="flex items-center justify-end">
                   <button
                     onClick={() => setSelectedItem(item)}
-                    className="text-blue-600 font-medium hover:text-blue-800 transition-colors"
+                    className="text-brand-600 font-medium hover:text-brand-800 transition-colors"
                   >
                     Learn more →
                   </button>

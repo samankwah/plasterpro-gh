@@ -136,7 +136,7 @@ const ScrollToTopButton = () => {
       {showScrollTop && (
         <button
           onClick={scrollToTop}
-          className="bg-blue-600 text-white p-3 md:p-4 rounded-full shadow-xl hover:bg-blue-700 hover:scale-110 transition-all duration-300 ease-in-out animate-fade-in group relative"
+          className="bg-brand-600 text-white p-3 md:p-4 rounded-full shadow-xl hover:bg-brand-700 hover:scale-110 transition-all duration-300 ease-in-out animate-fade-in group relative"
           aria-label="Scroll to top"
         >
           <ChevronUp className="w-6 h-6 md:w-7 md:h-7" />

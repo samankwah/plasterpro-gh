@@ -214,7 +214,7 @@ const ProjectDetailsPage = () => {
           <h2 className="text-2xl font-bold text-gray-800 mb-4">
             Project Not Found
           </h2>
-          <Link to="/projects" className="text-blue-600 hover:text-blue-800">
+          <Link to="/projects" className="text-brand-600 hover:text-brand-800">
             Back to Projects
           </Link>
         </div>
@@ -269,7 +269,7 @@ const ProjectDetailsPage = () => {
             </button>
             <Link
               to="/"
-              className="text-blue-600 hover:text-blue-800 font-semibold"
+              className="text-brand-600 hover:text-brand-800 font-semibold"
             >
               Home
             </Link>
@@ -278,7 +278,7 @@ const ProjectDetailsPage = () => {
       </nav>
 
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-r from-gray-900 to-blue-900 text-white py-20">
+      <section className="relative bg-gradient-to-r from-gray-900 to-brand-900 text-white py-20">
         <div className="absolute inset-0 bg-black opacity-50"></div>
         <div className="container mx-auto px-4 relative z-10">
           <motion.div
@@ -288,7 +288,7 @@ const ProjectDetailsPage = () => {
           >
             <div className="max-w-4xl">
               <div className="flex flex-wrap gap-2 mb-4">
-                <span className="px-3 py-1 bg-blue-600 rounded-full text-sm font-medium">
+                <span className="px-3 py-1 bg-brand-600 rounded-full text-sm font-medium">
                   {project.category.toUpperCase()}
                 </span>
                 {project.featured && (
@@ -303,7 +303,7 @@ const ProjectDetailsPage = () => {
               <h1 className="text-4xl md:text-5xl font-bold mb-6">
                 {project.title}
               </h1>
-              <p className="text-xl text-blue-100 max-w-3xl">
+              <p className="text-xl text-brand-100 max-w-3xl">
                 {project.description}
               </p>
             </div>
@@ -345,7 +345,7 @@ const ProjectDetailsPage = () => {
                               onClick={() => setActiveImage(index)}
                               className={`flex-shrink-0 w-20 h-20 rounded-lg overflow-hidden border-2 ${
                                 activeImage === index
-                                  ? "border-blue-500"
+                                  ? "border-brand-500"
                                   : "border-gray-300"
                               }`}
                             >
@@ -481,7 +481,7 @@ const ProjectDetailsPage = () => {
                         className="flex items-center p-3 bg-gray-50 rounded-lg"
                       >
                         <svg
-                          className="w-5 h-5 text-blue-500 mr-3"
+                          className="w-5 h-5 text-brand-500 mr-3"
                           fill="none"
                           stroke="currentColor"
                           viewBox="0 0 24 24"
@@ -559,7 +559,7 @@ const ProjectDetailsPage = () => {
                   <div className="mt-6 pt-6 border-t border-gray-200">
                     <Link
                       to="/contact"
-                      className="w-full bg-blue-600 text-white text-center font-semibold py-3 px-6 rounded-lg hover:bg-blue-700 transition-colors duration-300 block"
+                      className="w-full bg-brand-600 text-white text-center font-semibold py-3 px-6 rounded-lg hover:bg-brand-700 transition-colors duration-300 block"
                     >
                       Start Similar Project
                     </Link>
@@ -576,7 +576,7 @@ const ProjectDetailsPage = () => {
                       Client Feedback
                     </h3>
                     {project.testimonials.map((testimonial, index) => (
-                      <div key={index} className="bg-blue-50 rounded-lg p-4">
+                      <div key={index} className="bg-brand-50 rounded-lg p-4">
                         <p className="text-gray-700 italic mb-3">
                           "{testimonial.text}"
                         </p>
@@ -611,7 +611,7 @@ const ProjectDetailsPage = () => {
                       <Link
                         key={index}
                         to="/services"
-                        className="flex items-center p-3 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors duration-300"
+                        className="flex items-center p-3 text-gray-700 hover:text-brand-600 hover:bg-brand-50 rounded-lg transition-colors duration-300"
                       >
                         <svg
                           className="w-4 h-4 mr-3"
@@ -663,25 +663,25 @@ const ProjectDetailsPage = () => {
       )}
 
       {/* CTA Section */}
-      <section className="py-16 bg-gradient-to-r from-blue-600 to-blue-800 text-white">
+      <section className="py-16 bg-gradient-to-r from-brand-600 to-brand-800 text-white">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold mb-4">
             Ready to Start Your Project?
           </h2>
-          <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
+          <p className="text-xl text-brand-100 mb-8 max-w-2xl mx-auto">
             Let's transform your space with our expert ceiling and wall
             solutions.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               to="/contact"
-              className="bg-white text-blue-600 font-bold py-3 px-8 rounded-lg hover:bg-gray-100 transition-colors duration-300"
+              className="bg-white text-brand-600 font-bold py-3 px-8 rounded-lg hover:bg-gray-100 transition-colors duration-300"
             >
               Get Free Quote
             </Link>
             <Link
               to="/projects"
-              className="border-2 border-white text-white font-bold py-3 px-8 rounded-lg hover:bg-white hover:text-blue-600 transition-colors duration-300"
+              className="border-2 border-white text-white font-bold py-3 px-8 rounded-lg hover:bg-white hover:text-brand-600 transition-colors duration-300"
             >
               View More Projects
             </Link>

@@ -74,7 +74,7 @@ function Contact() {
       icon: MapPin,
       title: "Visit Us",
       details: address,
-      color: "from-blue-500 to-blue-600",
+      color: "from-brand-500 to-brand-600",
     },
     {
       icon: Phone,
@@ -87,7 +87,7 @@ function Contact() {
       icon: Mail,
       title: "Email Us",
       details: email,
-      color: "from-blue-600 to-slate-700",
+      color: "from-brand-600 to-slate-700",
     },
   ];
 
@@ -170,7 +170,7 @@ function Contact() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
       {/* Hero Section */}
-      <div className="relative bg-gradient-to-br from-blue-50 to-gray-100 text-black py-12 md:py-16 pt-24 md:pt-28">
+      <div className="relative bg-gradient-to-br from-brand-50 to-gray-100 text-black py-12 md:py-16 pt-24 md:pt-28">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-0 left-0 w-72 h-72 bg-white/20 rounded-full blur-3xl"></div>
           <div className="absolute bottom-0 right-0 w-72 h-72 bg-white/20 rounded-full blur-3xl"></div>
@@ -219,7 +219,7 @@ function Contact() {
           {/* Contact Form */}
           <div className="bg-white shadow-xl rounded-xl md:rounded-2xl p-5 md:p-8 border border-gray-100">
             <h2 className="text-xl md:text-3xl font-bold mb-5 md:mb-6 flex items-center text-gray-900">
-              <Send className="mr-2 md:mr-3 text-blue-600" size={24} />
+              <Send className="mr-2 md:mr-3 text-brand-600" size={24} />
               <span className="text-lg md:text-3xl">Send us a Message</span>
             </h2>
 
@@ -245,7 +245,7 @@ function Contact() {
                 )}
                 <div>
                   <label className="block mb-2 text-gray-700 font-medium flex items-center text-sm">
-                    <User className="mr-2 text-blue-600" size={18} />
+                    <User className="mr-2 text-brand-600" size={18} />
                     Full Name
                   </label>
                   <input
@@ -254,13 +254,13 @@ function Contact() {
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent transition"
                     placeholder="John Doe"
                   />
                 </div>
                 <div>
                   <label className="block mb-2 text-gray-700 font-medium flex items-center text-sm">
-                    <Mail className="mr-2 text-blue-600" size={18} />
+                    <Mail className="mr-2 text-brand-600" size={18} />
                     Email Address
                   </label>
                   <input
@@ -269,13 +269,13 @@ function Contact() {
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent transition"
                     placeholder="john@example.com"
                   />
                 </div>
                 <div>
                   <label className="block mb-2 text-gray-700 font-medium flex items-center text-sm">
-                    <Phone className="mr-2 text-blue-600" size={18} />
+                    <Phone className="mr-2 text-brand-600" size={18} />
                     Phone Number (Optional)
                   </label>
                   <input
@@ -283,13 +283,13 @@ function Contact() {
                     name="phone"
                     value={formData.phone}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent transition"
                     placeholder="+233 123 456 789"
                   />
                 </div>
                 <div>
                   <label className="block mb-2 text-gray-700 font-medium flex items-center text-sm">
-                    <MessageCircle className="mr-2 text-blue-600" size={18} />
+                    <MessageCircle className="mr-2 text-brand-600" size={18} />
                     Your Message
                   </label>
                   <textarea
@@ -298,14 +298,14 @@ function Contact() {
                     onChange={handleChange}
                     required
                     rows={5}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition resize-none"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent transition resize-none"
                     placeholder="Tell us about your project..."
                   ></textarea>
                 </div>
                 <button
                   type="submit"
                   disabled={formState.isSubmitting}
-                  className="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition-all flex items-center justify-center font-semibold shadow-lg hover:shadow-xl disabled:bg-blue-400 disabled:cursor-not-allowed"
+                  className="w-full bg-brand-600 text-white py-3 rounded-lg hover:bg-brand-700 transition-all flex items-center justify-center font-semibold shadow-lg hover:shadow-xl disabled:bg-brand-400 disabled:cursor-not-allowed"
                 >
                   {formState.isSubmitting ? (
                     <>
@@ -328,10 +328,10 @@ function Contact() {
             {/* Office Hours */}
             <div className="bg-white shadow-xl rounded-xl md:rounded-2xl p-5 md:p-8 border border-gray-100">
               <h3 className="text-lg md:text-xl font-bold mb-3 md:mb-4 flex items-center text-gray-900">
-                <Clock className="mr-2 md:mr-3 text-blue-600" size={20} />
+                <Clock className="mr-2 md:mr-3 text-brand-600" size={20} />
                 <span className="text-base md:text-xl">Office Hours</span>
               </h3>
-              <div className="bg-gradient-to-br from-blue-50 to-slate-50 p-4 md:p-5 rounded-lg md:rounded-xl">
+              <div className="bg-gradient-to-br from-brand-50 to-slate-50 p-4 md:p-5 rounded-lg md:rounded-xl">
                 <div className="space-y-2 md:space-y-3">
                   <div className="flex justify-between items-center">
                     <span className="text-sm md:text-base text-gray-700 font-medium">
@@ -364,7 +364,7 @@ function Contact() {
             {/* Google Maps */}
             <div className="bg-white shadow-xl rounded-xl md:rounded-2xl p-5 md:p-8 border border-gray-100">
               <h3 className="text-lg md:text-xl font-bold mb-3 md:mb-4 flex items-center text-gray-900">
-                <MapPin className="mr-2 md:mr-3 text-blue-600" size={20} />
+                <MapPin className="mr-2 md:mr-3 text-brand-600" size={20} />
                 <span className="text-base md:text-xl">Find Us on the Map</span>
               </h3>
               <div className="bg-gray-200 rounded-lg md:rounded-xl h-56 md:h-64 overflow-hidden">
@@ -402,7 +402,7 @@ function Contact() {
                   className="w-full flex items-center justify-between p-4 md:p-6 text-left hover:bg-gray-50 transition-colors"
                 >
                   <div className="flex items-start flex-1 pr-4">
-                    <span className="inline-flex items-center justify-center w-6 h-6 md:w-7 md:h-7 bg-blue-100 text-blue-600 rounded-full text-xs md:text-sm font-bold mr-3 flex-shrink-0 mt-0.5">
+                    <span className="inline-flex items-center justify-center w-6 h-6 md:w-7 md:h-7 bg-brand-100 text-brand-600 rounded-full text-xs md:text-sm font-bold mr-3 flex-shrink-0 mt-0.5">
                       ?
                     </span>
                     <h3 className="text-base md:text-lg font-bold text-gray-900">
@@ -411,7 +411,7 @@ function Contact() {
                   </div>
                   <div className="flex-shrink-0">
                     {openFaqIndex === index ? (
-                      <ChevronUp className="w-5 h-5 md:w-6 md:h-6 text-blue-600" />
+                      <ChevronUp className="w-5 h-5 md:w-6 md:h-6 text-brand-600" />
                     ) : (
                       <ChevronDown className="w-5 h-5 md:w-6 md:h-6 text-gray-400" />
                     )}
@@ -440,7 +440,7 @@ function Contact() {
           <h3 className="text-xl md:text-2xl font-bold text-white mb-3 md:mb-4">
             Prefer to chat directly?
           </h3>
-          <p className="text-sm md:text-base text-blue-50 mb-4 md:mb-6 px-2">
+          <p className="text-sm md:text-base text-brand-50 mb-4 md:mb-6 px-2">
             Get instant responses to your questions via WhatsApp
           </p>
           <button
@@ -450,7 +450,7 @@ function Contact() {
                 "_blank"
               );
             }}
-            className="inline-flex items-center gap-2 bg-white text-blue-600 px-5 md:px-6 py-2.5 md:py-3 rounded-full text-sm md:text-base font-semibold hover:bg-blue-50 transition-all shadow-lg hover:shadow-xl transform hover:scale-105"
+            className="inline-flex items-center gap-2 bg-white text-brand-600 px-5 md:px-6 py-2.5 md:py-3 rounded-full text-sm md:text-base font-semibold hover:bg-brand-50 transition-all shadow-lg hover:shadow-xl transform hover:scale-105"
           >
             <MessageCircle className="w-4 h-4 md:w-5 md:h-5" />
             Chat on WhatsApp

@@ -52,7 +52,7 @@ const Hero = () => {
   }, [controls]);
 
   return (
-    <div className="w-full bg-gradient-to-br from-blue-50 to-white pt-8 lg:pt-16">
+    <div className="w-full bg-gradient-to-br from-brand-50 to-white pt-8 lg:pt-16">
       <div className="container mx-auto px-6 py-16">
         <ScrollToTopButton />
         <div className="flex flex-col lg:flex-row items-center justify-between">
@@ -70,13 +70,13 @@ const Hero = () => {
             <div className="flex flex-wrap gap-4 mb-8">
               <a
                 href="/product-catalog"
-                className="px-6 py-3 bg-blue-500 hover:bg-blue-600 text-white font-medium rounded-md transition-colors duration-200 flex items-center gap-2"
+                className="px-6 py-3 bg-brand-500 hover:bg-brand-600 text-white font-medium rounded-md transition-colors duration-200 flex items-center gap-2"
               >
                 Shop Now <ArrowRight size={16} />
               </a>
               <a
                 href="/contact"
-                className="px-6 py-3 border border-gray-300 hover:border-blue-500 hover:text-blue-500 text-gray-700 font-medium rounded-md transition-colors duration-200"
+                className="px-6 py-3 border border-gray-300 hover:border-brand-500 hover:text-brand-500 text-gray-700 font-medium rounded-md transition-colors duration-200"
               >
                 Get a Quote
               </a>
@@ -100,7 +100,7 @@ const Hero = () => {
             transition={{ duration: 0.5, delay: 0.2 }}
           >
             <div className="relative">
-              <div className="absolute -z-10 w-4/5 h-4/5 top-8 right-0 bg-blue-200 rounded-lg"></div>
+              <div className="absolute -z-10 w-4/5 h-4/5 top-8 right-0 bg-brand-200 rounded-lg"></div>
               <video
                 src={PlasterProVideo}
                 autoPlay

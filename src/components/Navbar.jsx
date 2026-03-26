@@ -55,8 +55,8 @@ const Navbar = () => {
           className={`container w-full rounded-full transition-all duration-500
           ${
             scrolled
-              ? "bg-gradient-to-r from-blue-900 to-blue-800 py-2 shadow-lg"
-              : "bg-gradient-to-r from-blue-950 to-blue-900 py-3 bg-opacity-95 backdrop-blur-md"
+              ? "bg-gradient-to-r from-brand-900 to-brand-800 py-2 shadow-lg"
+              : "bg-gradient-to-r from-brand-950 to-brand-900 py-3 bg-opacity-95 backdrop-blur-md"
           }`}
         >
           <div className="flex justify-between items-center px-8">
@@ -78,8 +78,8 @@ const Navbar = () => {
                       to={item.link}
                       className={`transition-colors relative text-white text-base ${
                         isActive(item.link)
-                          ? "font-semibold text-blue-600 after:content-[''] after:absolute after:left-0 after:bottom-[-8px] after:w-full after:h-1 after:bg-white after:rounded-full"
-                          : "hover:text-blue-600"
+                          ? "font-semibold text-brand-600 after:content-[''] after:absolute after:left-0 after:bottom-[-8px] after:w-full after:h-1 after:bg-white after:rounded-full"
+                          : "hover:text-brand-600"
                       }`}
                     >
                       {item.name}
@@ -91,7 +91,7 @@ const Navbar = () => {
               {/* Shop Now Button */}
               {/* <Link
                 to="https://paystack.shop/plasterpro-gha"
-                className="flex items-center bg-blue-600 hover:bg-blue-500 text-white font-medium py-2 px-4 rounded-full transition-colors duration-300"
+                className="flex items-center bg-brand-600 hover:bg-brand-500 text-white font-medium py-2 px-4 rounded-full transition-colors duration-300"
               >
                 <ShoppingBag size={18} className="mr-2" />
                 Shop Now
@@ -101,7 +101,7 @@ const Navbar = () => {
             {/* Mobile Menu Button */}
             <button
               ref={menuButtonRef}
-              className="md:hidden p-2 rounded-lg bg-blue-800 hover:bg-blue-700 text-white transition-colors duration-300"
+              className="md:hidden p-2 rounded-lg bg-brand-800 hover:bg-brand-700 text-white transition-colors duration-300"
               onClick={() => setIsOpen(!isOpen)}
               aria-expanded={isOpen}
               aria-label="Toggle navigation menu"
@@ -128,7 +128,7 @@ const Navbar = () => {
         }`}
       >
         {/* Menu Header */}
-        <div className="bg-gradient-to-r from-blue-600 to-blue-700 px-6 py-6">
+        <div className="bg-gradient-to-r from-brand-600 to-brand-700 px-6 py-6">
           <img
             src={LogoWhite}
             alt="PlasterPro Logo"
@@ -146,7 +146,7 @@ const Navbar = () => {
                   to={item.link}
                   className={`flex items-center gap-4 px-6 py-4 transition-colors ${
                     isActive(item.link)
-                      ? "bg-blue-50 text-blue-600 border-l-4 border-blue-600"
+                      ? "bg-brand-50 text-brand-600 border-l-4 border-brand-600"
                       : "text-gray-700 hover:bg-gray-50 border-l-4 border-transparent"
                   }`}
                   onClick={() => setIsOpen(false)}
@@ -163,7 +163,7 @@ const Navbar = () => {
         <div className="absolute bottom-0 left-0 right-0 px-6 py-4 bg-white border-t border-gray-200">
           <Link
             to="/contact"
-            className="flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-4 rounded-lg transition-colors w-full"
+            className="flex items-center justify-center gap-2 bg-brand-600 hover:bg-brand-700 text-white font-medium py-3 px-4 rounded-lg transition-colors w-full"
             onClick={() => setIsOpen(false)}
           >
             <Mail className="w-4 h-4" />

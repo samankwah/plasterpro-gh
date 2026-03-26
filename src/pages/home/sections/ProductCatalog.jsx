@@ -80,7 +80,7 @@ const QuickViewImageGallery = ({ product }) => {
               onClick={() => setSelectedImageIndex(index)}
               className={`relative h-14 sm:h-18 md:h-20 rounded-lg overflow-hidden cursor-pointer transition-all ${
                 selectedImageIndex === index
-                  ? "ring-2 ring-blue-600 ring-offset-1"
+                  ? "ring-2 ring-brand-600 ring-offset-1"
                   : "ring-1 ring-gray-200 hover:ring-gray-400"
               }`}
             >
@@ -100,7 +100,7 @@ const QuickViewImageGallery = ({ product }) => {
             product.category === "Services"
               ? "bg-purple-100 text-purple-700"
               : product.category === "Hardware"
-              ? "bg-blue-100 text-blue-700"
+              ? "bg-brand-100 text-brand-700"
               : "bg-green-100 text-green-700"
           }`}
         >
@@ -213,7 +213,7 @@ const ProductCatalog = () => {
             className="w-full flex items-center justify-between p-4 bg-white rounded-lg shadow-sm border border-slate-100"
           >
             <div className="flex items-center">
-              <Filter className="h-5 w-5 mr-2 text-blue-500" />
+              <Filter className="h-5 w-5 mr-2 text-brand-500" />
               <span className="font-medium text-slate-800">
                 Filters & Search
               </span>
@@ -233,7 +233,7 @@ const ProductCatalog = () => {
                     <input
                       type="text"
                       placeholder="Search product..."
-                      className="w-full pl-10 pr-4 py-2.5 border border-slate-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+                      className="w-full pl-10 pr-4 py-2.5 border border-slate-200 rounded-lg focus:ring-2 focus:ring-brand-500 focus:border-transparent transition-all"
                       value={searchInput}
                       onChange={(e) => setSearchInput(e.target.value)}
                     />
@@ -253,7 +253,7 @@ const ProductCatalog = () => {
                   </div>
                   <button
                     onClick={handleSearch}
-                    className="px-4 py-2.5 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors flex items-center justify-center shadow-sm"
+                    className="px-4 py-2.5 bg-brand-600 text-white rounded-lg hover:bg-brand-700 transition-colors flex items-center justify-center shadow-sm"
                   >
                     <Search className="h-5 w-5" />
                   </button>
@@ -271,7 +271,7 @@ const ProductCatalog = () => {
                       onClick={() => setSelectedCategory(category.name)}
                       className={`py-2 px-4 rounded-full text-sm transition-colors ${
                         selectedCategory === category.name
-                          ? "bg-blue-600 text-white"
+                          ? "bg-brand-600 text-white"
                           : "bg-slate-100 text-slate-700 hover:bg-slate-200"
                       }`}
                     >
@@ -297,7 +297,7 @@ const ProductCatalog = () => {
                     <input
                       type="text"
                       placeholder="Search product..."
-                      className="w-full pl-10 pr-4 py-2.5 border border-slate-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+                      className="w-full pl-10 pr-4 py-2.5 border border-slate-200 rounded-lg focus:ring-2 focus:ring-brand-500 focus:border-transparent transition-all"
                       value={searchInput}
                       onChange={(e) => setSearchInput(e.target.value)}
                     />
@@ -317,7 +317,7 @@ const ProductCatalog = () => {
                   </div>
                   <button
                     onClick={handleSearch}
-                    className="px-4 py-2.5 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors flex items-center justify-center shadow-sm"
+                    className="px-4 py-2.5 bg-brand-600 text-white rounded-lg hover:bg-brand-700 transition-colors flex items-center justify-center shadow-sm"
                   >
                     <Search className="h-5 w-5" />
                   </button>
@@ -335,7 +335,7 @@ const ProductCatalog = () => {
                         onClick={() => setSelectedCategory(category.name)}
                         className={`w-full text-left flex justify-between items-center py-2 px-3 rounded-lg transition-colors ${
                           selectedCategory === category.name
-                            ? "bg-blue-50 text-blue-700 font-medium"
+                            ? "bg-brand-50 text-brand-700 font-medium"
                             : "text-slate-600 hover:bg-slate-50"
                         }`}
                       >
@@ -362,7 +362,7 @@ const ProductCatalog = () => {
                     onClick={() => setViewMode("grid")}
                     className={`p-2 rounded-lg transition-colors ${
                       viewMode === "grid"
-                        ? "bg-white text-blue-600 shadow-sm"
+                        ? "bg-white text-brand-600 shadow-sm"
                         : "text-slate-400 hover:text-slate-600"
                     }`}
                   >
@@ -372,7 +372,7 @@ const ProductCatalog = () => {
                     onClick={() => setViewMode("list")}
                     className={`p-2 rounded-lg transition-colors ${
                       viewMode === "list"
-                        ? "bg-white text-blue-600 shadow-sm"
+                        ? "bg-white text-brand-600 shadow-sm"
                         : "text-slate-400 hover:text-slate-600"
                     }`}
                   >
@@ -382,7 +382,7 @@ const ProductCatalog = () => {
                 <select
                   value={sortType}
                   onChange={(e) => setSortType(e.target.value)}
-                  className="p-2 border border-slate-200 rounded-lg bg-white focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  className="p-2 border border-slate-200 rounded-lg bg-white focus:ring-2 focus:ring-brand-500 focus:border-transparent"
                 >
                   <option value="nameAsc">Name (A-Z)</option>
                   <option value="nameDesc">Name (Z-A)</option>
@@ -421,7 +421,7 @@ const ProductCatalog = () => {
                           product.category === "Services"
                             ? "bg-purple-100 text-purple-700"
                             : product.category === "Hardware"
-                            ? "bg-blue-100 text-blue-700"
+                            ? "bg-brand-100 text-brand-700"
                             : "bg-green-100 text-green-700"
                         }`}
                       >
@@ -479,7 +479,7 @@ const ProductCatalog = () => {
                     setSearchQuery("");
                     setSearchInput("");
                   }}
-                  className="px-4 py-2 bg-blue-100 text-blue-700 rounded-lg hover:bg-blue-200 transition-colors"
+                  className="px-4 py-2 bg-brand-100 text-brand-700 rounded-lg hover:bg-brand-200 transition-colors"
                 >
                   Reset filters
                 </button>
@@ -530,7 +530,7 @@ const ProductCatalog = () => {
                       "_blank"
                     );
                   }}
-                  className="w-full mt-4 bg-blue-600 text-white py-3 px-6 rounded-lg hover:bg-blue-700 transition-colors font-medium shadow-sm"
+                  className="w-full mt-4 bg-brand-600 text-white py-3 px-6 rounded-lg hover:bg-brand-700 transition-colors font-medium shadow-sm"
                 >
                   Contact Us for Details
                 </button>
