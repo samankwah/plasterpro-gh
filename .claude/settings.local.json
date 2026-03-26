@@ -7,7 +7,9 @@
       "Bash(cd \"/c/Users/CRAFT/Desktop/future MEST projects/Frontend/plasterpro-gh/plasterpro-gh\" && npx tsc --noEmit 2>&1)",
       "Bash(cd C:\\\\Users\\\\CRAFT\\\\Desktop\\\\future MEST projects\\\\Frontend\\\\plasterpro-gh:*)",
       "mcp__Sanity__query_documents",
-      "mcp__Sanity__add_cors_origin"
+      "mcp__Sanity__add_cors_origin",
+      "Bash(find 'C:\\\\Users\\\\CRAFT\\\\Desktop\\\\future MEST projects\\\\Frontend\\\\plasterpro-gh' -type f -name *.js -o -name *.jsx -o -name *.ts -o -name *.tsx -o -name *.css -o -name *.config.js)",
+      "Bash(find src:*)"
     ]
   }
 }
