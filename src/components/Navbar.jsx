@@ -50,7 +50,7 @@ const Navbar = () => {
 
   return (
     <>
-      <div className={`fixed top-0 w-full flex justify-center px-4 pt-4 ${isOpen ? 'z-[80]' : 'z-[100]'}`}>
+      <div className={`fixed top-0 w-full flex justify-center px-2 sm:px-4 pt-2 sm:pt-4 ${isOpen ? 'z-[80]' : 'z-[100]'}`}>
         <nav
           className={`container w-full rounded-full transition-all duration-500
           ${
@@ -59,13 +59,13 @@ const Navbar = () => {
               : "bg-gradient-to-r from-brand-950 to-brand-900 py-3 bg-opacity-95 backdrop-blur-md"
           }`}
         >
-          <div className="flex justify-between items-center px-8">
+          <div className="flex justify-between items-center px-4 sm:px-6 md:px-8">
             {/* Logo */}
             <Link to="/" className="flex items-center">
               <img
                 src={LogoWhite}
                 alt="PlasterPro Logo"
-                className="h-14 md:h-11 transform hover:scale-105 transition-transform duration-300"
+                className="h-20 sm:h-20 md:h-16 transform hover:scale-105 transition-transform duration-300"
               />
             </Link>
 
