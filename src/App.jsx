@@ -1,21 +1,43 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom"; // Import BrowserRouter
+import { lazy, Suspense } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import ScrollToTop from "./components/ScrollToTop";
-import Home from "./pages/home";
 import ScrollToTopButton from "./components/ScrollToTopButton";
 import Navbar from "./components/Navbar";
-import AboutProduct from "./pages/home/sections/AboutProduct";
 import Footer from "./components/Footer";
-import AboutInnovator from "./pages/home/sections/AboutInnovator";
-import Showcase from "./pages/home/sections/Showcase";
-import Contact from "./pages/home/sections/Contact";
-import Error from "./components/Error";
-import ProductCatalog from "./pages/home/sections/ProductCatalog";
-import AboutInstallation from "./components/AboutInstallation";
-import MeetingRequest from "./components/MeetingRequest ";
-import ProductCard from "./components/ProductCard";
-import ProjectsPage from "./components/ProjectsPage";
-import { BlogList, BlogPost } from "./pages/home/sections/BlogPage";
-import ProjectDetailsPage from "./pages/ProjectDetailsPage";
+
+const Home = lazy(() => import("./pages/home"));
+const AboutProduct = lazy(() => import("./pages/home/sections/AboutProduct"));
+const AboutInnovator = lazy(() =>
+  import("./pages/home/sections/AboutInnovator"),
+);
+const Showcase = lazy(() => import("./pages/home/sections/Showcase"));
+const Contact = lazy(() => import("./pages/home/sections/Contact"));
+const Error = lazy(() => import("./components/Error"));
+const ProductCatalog = lazy(() =>
+  import("./pages/home/sections/ProductCatalog"),
+);
+const AboutInstallation = lazy(() =>
+  import("./components/AboutInstallation"),
+);
+const MeetingRequest = lazy(() => import("./components/MeetingRequest "));
+const ProjectsPage = lazy(() => import("./components/ProjectsPage"));
+const BlogList = lazy(() =>
+  import("./pages/home/sections/BlogPage").then((module) => ({
+    default: module.BlogList,
+  })),
+);
+const ProjectDetailsPage = lazy(() => import("./pages/ProjectDetailsPage"));
+
+const PageLoader = () => (
+  <div
+    className="flex min-h-[50vh] items-center justify-center"
+    role="status"
+    aria-live="polite"
+  >
+    <span className="h-10 w-10 animate-spin rounded-full border-4 border-brand-100 border-t-brand-500" />
+    <span className="sr-only">Loading page</span>
+  </div>
+);
 
 const App = () => {
   return (
@@ -23,21 +45,22 @@ const App = () => {
       <ScrollToTop />
       <ScrollToTopButton />
       <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/services" element={<AboutProduct />} />
-        <Route path="/about-us" element={<AboutInnovator />} />
-        <Route path="/products" element={<Showcase />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/installation" element={<AboutInstallation />} />
-        <Route path="/product-catalog" element={<ProductCatalog />} />
-        <Route path="/product-card" element={<ProductCard />} />
-        <Route path="/request-meeting" element={<MeetingRequest />} />
-        <Route path="/projects" element={<ProjectsPage />} />
-        <Route path="/blogpage" element={<BlogList />} />
-        <Route path="/projects/:projectId" element={<ProjectDetailsPage />} />
-        <Route path="*" element={<Error />} />
-      </Routes>
+      <Suspense fallback={<PageLoader />}>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/services" element={<AboutProduct />} />
+          <Route path="/about-us" element={<AboutInnovator />} />
+          <Route path="/products" element={<Showcase />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/installation" element={<AboutInstallation />} />
+          <Route path="/product-catalog" element={<ProductCatalog />} />
+          <Route path="/request-meeting" element={<MeetingRequest />} />
+          <Route path="/projects" element={<ProjectsPage />} />
+          <Route path="/blogpage" element={<BlogList />} />
+          <Route path="/projects/:projectId" element={<ProjectDetailsPage />} />
+          <Route path="*" element={<Error />} />
+        </Routes>
+      </Suspense>
 
       <Footer />
     </Router>
