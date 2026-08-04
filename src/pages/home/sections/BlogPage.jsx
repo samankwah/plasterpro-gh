@@ -289,7 +289,7 @@ const BlogList = () => {
   return (
     <div className="bg-gradient-to-b from-white to-slate-50 min-h-screen">
       {/* Enhanced Hero Section - Reduced Height & Gray Color */}
-      <section className="relative bg-gradient-to-br from-gray-300 via-gray-700 to-gray-900 text-white py-12 md:py-16 pt-24 md:pt-24 overflow-hidden">
+      <section className="route-intro relative bg-gradient-to-br from-gray-300 via-gray-700 to-gray-900 text-white pb-[7.5rem] md:pb-32 overflow-hidden">
         <div className="absolute inset-0">
           <div className="absolute top-10 left-10 w-64 h-64 bg-gray-600/20 rounded-full blur-3xl"></div>
           <div className="absolute bottom-10 right-10 w-64 h-64 bg-gray-500/20 rounded-full blur-3xl"></div>
@@ -334,7 +334,7 @@ const BlogList = () => {
       </section>
 
       {/* Enhanced Filter and Sort Section */}
-      <section className="py-6 bg-white/80 backdrop-blur-sm border-b border-gray-200 sticky top-0 z-40">
+      <section className="route-sticky-below-navbar py-6 bg-white/80 backdrop-blur-sm border-b border-gray-200 sticky z-40">
         <div className="container mx-auto px-4">
           <div className="flex flex-col lg:flex-row gap-4 items-start lg:items-center justify-between">
             {/* Categories - Hidden on mobile, visible on desktop */}

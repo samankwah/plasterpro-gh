@@ -52,8 +52,8 @@ const Hero = () => {
   }, [controls]);
 
   return (
-    <div className="w-full bg-gradient-to-br from-brand-50 to-white pt-24 sm:pt-28 lg:pt-32">
-      <div className="container mx-auto px-6 pb-16 pt-4 lg:py-16">
+    <div className="w-full bg-gradient-to-br from-brand-50 to-white">
+      <div className="route-intro container mx-auto px-6 pb-[9.5rem] sm:pb-[10.5rem] md:pb-40 lg:pb-56">
         <ScrollToTopButton />
         <div className="flex flex-col lg:flex-row items-center justify-between">
           {/* Left column - Text content */}

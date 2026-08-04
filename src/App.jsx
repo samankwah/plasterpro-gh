@@ -45,22 +45,24 @@ const App = () => {
       <ScrollToTop />
       <ScrollToTopButton />
       <Navbar />
-      <Suspense fallback={<PageLoader />}>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/services" element={<AboutProduct />} />
-          <Route path="/about-us" element={<AboutInnovator />} />
-          <Route path="/products" element={<Showcase />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/installation" element={<AboutInstallation />} />
-          <Route path="/product-catalog" element={<ProductCatalog />} />
-          <Route path="/request-meeting" element={<MeetingRequest />} />
-          <Route path="/projects" element={<ProjectsPage />} />
-          <Route path="/blogpage" element={<BlogList />} />
-          <Route path="/projects/:projectId" element={<ProjectDetailsPage />} />
-          <Route path="*" element={<Error />} />
-        </Routes>
-      </Suspense>
+      <main className="route-content">
+        <Suspense fallback={<PageLoader />}>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/services" element={<AboutProduct />} />
+            <Route path="/about-us" element={<AboutInnovator />} />
+            <Route path="/products" element={<Showcase />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/installation" element={<AboutInstallation />} />
+            <Route path="/product-catalog" element={<ProductCatalog />} />
+            <Route path="/request-meeting" element={<MeetingRequest />} />
+            <Route path="/projects" element={<ProjectsPage />} />
+            <Route path="/blogpage" element={<BlogList />} />
+            <Route path="/projects/:projectId" element={<ProjectDetailsPage />} />
+            <Route path="*" element={<Error />} />
+          </Routes>
+        </Suspense>
+      </main>
 
       <Footer />
     </Router>

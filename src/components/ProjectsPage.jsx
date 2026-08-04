@@ -171,7 +171,7 @@ const ProjectsPage = () => {
   return (
     <div className="bg-white">
       {/* Enhanced Hero Section */}
-      <section className="relative bg-gradient-to-r from-gray-900 to-brand-900 text-white py-28 overflow-hidden">
+      <section className="route-intro relative bg-gradient-to-r from-gray-900 to-brand-900 text-white pb-[12.5rem] md:pb-48 overflow-hidden">
         <div className="absolute inset-0 bg-black opacity-50"></div>
         <div className="absolute top-0 left-0 w-full h-full">
           <div className="absolute top-20 left-10 w-4 h-4 bg-brand-400 rounded-full opacity-70"></div>

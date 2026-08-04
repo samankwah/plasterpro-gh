@@ -21,7 +21,7 @@ const AboutInnovator = () => {
             className="w-full h-full object-cover mix-blend-overlay"
           />
         </div> */}
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-20 lg:py-24 text-center">
+        <div className="route-intro relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-[10.5rem] md:pb-32 lg:pb-40 text-center">
           <h1 className="text-2xl md:text-3xl lg:text-5xl font-extrabold text-gray-950 tracking-tight mb-4">
             About <span className="text-brand-500">PlasterPro Ghana</span>
           </h1>

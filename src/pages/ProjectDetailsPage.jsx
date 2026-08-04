@@ -246,7 +246,7 @@ const ProjectDetailsPage = () => {
     <div className="min-h-screen bg-gray-50">
       {/* Navigation */}
       <nav className="bg-white shadow-sm">
-        <div className="container mx-auto px-4 py-4">
+        <div className="route-intro container mx-auto px-4 pb-2 md:pb-0">
           <div className="flex items-center justify-between">
             <button
               onClick={() => navigate(-1)}

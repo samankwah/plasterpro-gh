@@ -108,7 +108,7 @@ const MeetingRequest = () => {
   };
 
   return (
-    <div className="container mx-auto p-6">
+    <div className="route-intro container mx-auto px-6 pb-6 md:pb-4">
       <h2 className="text-3xl font-bold text-gray-800 mb-6">
         Request a Meeting
       </h2>

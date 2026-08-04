@@ -170,7 +170,7 @@ function Contact() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
       {/* Hero Section */}
-      <div className="relative bg-gradient-to-br from-brand-50 to-gray-100 text-black py-12 md:py-16 pt-24 md:pt-28">
+      <div className="route-intro relative bg-gradient-to-br from-brand-50 to-gray-100 text-black pb-[7.5rem] md:pb-36">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-0 left-0 w-72 h-72 bg-white/20 rounded-full blur-3xl"></div>
           <div className="absolute bottom-0 right-0 w-72 h-72 bg-white/20 rounded-full blur-3xl"></div>

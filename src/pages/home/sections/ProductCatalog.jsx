@@ -24,11 +24,11 @@ const PRODUCTS_QUERY = `*[_type == "product"] | order(displayOrder asc) {
 }`;
 
 const ProductCatalogSkeleton = () => (
-  <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white pt-20 pb-12">
-    <div className="container mx-auto px-4 py-8">
+  <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white pb-[8.5rem] md:pb-32">
+    <div className="route-intro container mx-auto px-4 pb-8">
       <div className="text-center mb-10">
         <div className="h-9 w-72 bg-gray-200 rounded animate-pulse mx-auto mb-4"></div>
-        <div className="h-5 w-96 bg-gray-200 rounded animate-pulse mx-auto"></div>
+        <div className="h-5 w-full max-w-96 bg-gray-200 rounded animate-pulse mx-auto"></div>
       </div>
       <div className="flex gap-8">
         <div className="hidden md:block w-80 flex-shrink-0">
@@ -195,8 +195,8 @@ const ProductCatalog = () => {
   if (loading) return <ProductCatalogSkeleton />;
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white pt-20 pb-12">
-      <div className="container mx-auto px-4 py-8">
+    <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white pb-[8.5rem] md:pb-32">
+      <div className="route-intro container mx-auto px-4 pb-8">
         <div className="text-center mb-10">
           <h1 className="text-3xl md:text-4xl font-bold text-slate-800 mb-4">
             Our Products & Services

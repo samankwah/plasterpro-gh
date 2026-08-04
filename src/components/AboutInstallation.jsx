@@ -149,7 +149,7 @@ const AboutInstallation = () => {
   ];
 
   return (
-    <div className="py-16 bg-gradient-to-b from-gray-50 to-white pt-20">
+    <div className="route-intro bg-gradient-to-b from-gray-50 to-white pb-[7.5rem] md:pb-28">
       <div className="container mx-auto px-4">
         <button
           onClick={() => navigate("/services")}

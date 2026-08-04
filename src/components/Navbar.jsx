@@ -50,7 +50,7 @@ const Navbar = () => {
 
   return (
     <>
-      <div className={`fixed top-0 w-full flex justify-center px-2 sm:px-4 pt-2 sm:pt-4 ${isOpen ? 'z-[80]' : 'z-[100]'}`}>
+      <div className={`fixed inset-x-0 top-0 flex justify-center px-2 sm:px-4 pt-2 sm:pt-4 ${isOpen ? 'z-[80]' : 'z-[100]'}`}>
         <nav
           className={`container w-full rounded-full transition-all duration-500
           ${

@@ -11,7 +11,7 @@ const Home = () => {
   return (
     <div>
       <Hero />
-      <Showcase />
+      <Showcase isRouteIntro={false} />
     </div>
   );
 };

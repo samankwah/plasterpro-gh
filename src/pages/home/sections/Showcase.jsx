@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import PropTypes from "prop-types";
 import { usePageMeta } from "../../../hooks/usePageMeta";
 import { PAGE_METADATA } from "../../../constants/pageMetadata";
 import { useSanity } from "../../../hooks/useSanity";
@@ -15,12 +16,18 @@ const SHOWCASE_QUERY = `*[_type == "showcaseItem"] | order(displayOrder asc) {
   commonUses
 }`;
 
-const ShowcaseSkeleton = () => (
-  <div className="bg-gradient-to-b from-gray-50 to-white py-24 px-6 sm:px-8 lg:px-12">
+const ShowcaseSkeleton = ({ isRouteIntro }) => (
+  <div
+    className={`bg-gradient-to-b from-gray-50 to-white px-6 sm:px-8 lg:px-12 ${
+      isRouteIntro
+        ? "route-intro pb-[10.5rem] md:pb-40"
+        : "py-24"
+    }`}
+  >
     <div className="container mx-auto">
       <div className="text-center mb-20">
         <div className="h-10 w-72 bg-gray-200 rounded animate-pulse mx-auto mb-5"></div>
-        <div className="h-6 w-96 bg-gray-200 rounded animate-pulse mx-auto"></div>
+        <div className="h-6 w-full max-w-96 bg-gray-200 rounded animate-pulse mx-auto"></div>
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10">
         {[...Array(8)].map((_, i) => (
@@ -38,7 +45,11 @@ const ShowcaseSkeleton = () => (
   </div>
 );
 
-const Showcase = () => {
+ShowcaseSkeleton.propTypes = {
+  isRouteIntro: PropTypes.bool.isRequired,
+};
+
+const Showcase = ({ isRouteIntro = true }) => {
   usePageMeta(PAGE_METADATA.products.title, PAGE_METADATA.products.description);
 
   const { data: showcaseItems, loading } = useSanity(SHOWCASE_QUERY);
@@ -190,12 +201,18 @@ const Showcase = () => {
     );
   };
 
-  if (loading) return <ShowcaseSkeleton />;
+  if (loading) return <ShowcaseSkeleton isRouteIntro={isRouteIntro} />;
 
   const items = showcaseItems || [];
 
   return (
-    <div className="bg-gradient-to-b from-gray-50 to-white py-24 px-6 sm:px-8 lg:px-12">
+    <div
+      className={`bg-gradient-to-b from-gray-50 to-white px-6 sm:px-8 lg:px-12 ${
+        isRouteIntro
+          ? "route-intro pb-[10.5rem] md:pb-40"
+          : "py-24"
+      }`}
+    >
       <div className="container mx-auto">
         <div className="text-center mb-20">
           <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-5 tracking-tight">
@@ -296,6 +313,10 @@ const Showcase = () => {
       </div>
     </div>
   );
+};
+
+Showcase.propTypes = {
+  isRouteIntro: PropTypes.bool,
 };
 
 export default Showcase;

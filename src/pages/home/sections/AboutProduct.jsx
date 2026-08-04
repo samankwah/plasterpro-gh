@@ -131,7 +131,7 @@ const AboutProduct = () => {
           <div className="absolute bottom-0 right-0 w-72 h-72 bg-brand-500/10 rounded-full blur-3xl"></div>
         </div>
 
-        <div className="relative max-w-6xl mx-auto text-center px-4 py-12 md:py-24">
+        <div className="route-intro relative max-w-6xl mx-auto text-center px-4 pb-[4.5rem] md:pb-40">
           <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm px-3 py-1.5 rounded-full text-white text-xs md:text-sm font-medium mb-4 md:mb-6">
             <Sparkles className="w-3 h-3 md:w-4 md:h-4" />
             Premium Quality Services

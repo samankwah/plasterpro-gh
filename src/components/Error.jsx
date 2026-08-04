@@ -8,7 +8,7 @@ const Error = () => {
 
   return (
     <>
-      <section className=" grid place-items-center pt-20 mb-16">
+      <section className="route-intro grid place-items-center pb-14 md:pb-12 mb-16">
         <img src={PageNotFound} alt="Page not found" className="h-96 w-96  " />
         <div className=" space-y-4 text-center ">
           <h3 className=" text-2xl font-semibold ">Page Not Found</h3>

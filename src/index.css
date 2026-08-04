@@ -13,3 +13,27 @@
   --color-brand-900: #7a112e;
   --color-brand-950: #4a0617;
 }
+
+:root {
+  --site-navbar-height: 7rem;
+  --route-intro-gap: 1.5rem;
+}
+
+.route-content {
+  padding-block-start: var(--site-navbar-height);
+}
+
+.route-intro {
+  padding-block-start: var(--route-intro-gap);
+}
+
+.route-sticky-below-navbar {
+  top: var(--site-navbar-height);
+}
+
+@media (min-width: 48rem) {
+  :root {
+    --site-navbar-height: 6.5rem;
+    --route-intro-gap: 2rem;
+  }
+}
