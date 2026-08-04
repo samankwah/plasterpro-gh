@@ -20,12 +20,12 @@ const ShowcaseSkeleton = ({ isRouteIntro }) => (
   <div
     className={`bg-gradient-to-b from-gray-50 to-white px-6 sm:px-8 lg:px-12 ${
       isRouteIntro
-        ? "route-intro pb-[10.5rem] md:pb-40"
-        : "py-24"
+        ? "route-intro pb-16 md:pb-20"
+        : "pt-12 pb-16 md:pt-16 md:pb-20"
     }`}
   >
     <div className="container mx-auto">
-      <div className="text-center mb-20">
+      <div className="text-center mb-10 md:mb-12">
         <div className="h-10 w-72 bg-gray-200 rounded animate-pulse mx-auto mb-5"></div>
         <div className="h-6 w-full max-w-96 bg-gray-200 rounded animate-pulse mx-auto"></div>
       </div>
@@ -209,12 +209,12 @@ const Showcase = ({ isRouteIntro = true }) => {
     <div
       className={`bg-gradient-to-b from-gray-50 to-white px-6 sm:px-8 lg:px-12 ${
         isRouteIntro
-          ? "route-intro pb-[10.5rem] md:pb-40"
-          : "py-24"
+          ? "route-intro pb-16 md:pb-20"
+          : "pt-12 pb-16 md:pt-16 md:pb-20"
       }`}
     >
       <div className="container mx-auto">
-        <div className="text-center mb-20">
+        <div className="text-center mb-10 md:mb-12">
           <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-5 tracking-tight">
             Featured Services
           </h2>

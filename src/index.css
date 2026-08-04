@@ -20,11 +20,17 @@
 }
 
 .route-content {
-  padding-block-start: var(--site-navbar-height);
+  min-height: 50vh;
 }
 
 .route-intro {
-  padding-block-start: var(--route-intro-gap);
+  padding-block-start: calc(
+    var(--site-navbar-height) + var(--route-intro-gap)
+  );
+}
+
+.route-page-loader {
+  padding-block-start: var(--site-navbar-height);
 }
 
 .route-sticky-below-navbar {

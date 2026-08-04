@@ -53,7 +53,7 @@ const Hero = () => {
 
   return (
     <div className="w-full bg-gradient-to-br from-brand-50 to-white">
-      <div className="route-intro container mx-auto px-6 pb-[9.5rem] sm:pb-[10.5rem] md:pb-40 lg:pb-56">
+      <div className="route-intro container mx-auto px-6 pb-12 md:pb-16">
         <ScrollToTopButton />
         <div className="flex flex-col lg:flex-row items-center justify-between">
           {/* Left column - Text content */}

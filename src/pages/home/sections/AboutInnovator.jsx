@@ -11,7 +11,7 @@ const AboutInnovator = () => {
   usePageMeta(PAGE_METADATA.aboutUs.title, PAGE_METADATA.aboutUs.description);
 
   return (
-    <div className="bg-gradient-to-b from-white to-gray-50">
+    <div className="bg-gradient-to-b from-brand-50/60 via-white to-gray-50">
       {/* Hero Section */}
       <div className="relative overflow-hidden">
         {/* <div className="absolute inset-0 bg-brand-900 opacity-80">
@@ -21,7 +21,7 @@ const AboutInnovator = () => {
             className="w-full h-full object-cover mix-blend-overlay"
           />
         </div> */}
-        <div className="route-intro relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-[10.5rem] md:pb-32 lg:pb-40 text-center">
+        <div className="route-intro relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-8 text-center">
           <h1 className="text-2xl md:text-3xl lg:text-5xl font-extrabold text-gray-950 tracking-tight mb-4">
             About <span className="text-brand-500">PlasterPro Ghana</span>
           </h1>
@@ -33,7 +33,7 @@ const AboutInnovator = () => {
       </div>
 
       {/* Company History Section */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12 lg:py-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-8 md:pb-12 lg:pb-16">
         <div className="lg:grid lg:grid-cols-2 lg:gap-16 items-center">
           <div className="rounded-xl overflow-hidden shadow-2xl mb-10 lg:mb-0">
             <img

@@ -30,7 +30,7 @@ const ProjectDetailsPage = lazy(() => import("./pages/ProjectDetailsPage"));
 
 const PageLoader = () => (
   <div
-    className="flex min-h-[50vh] items-center justify-center"
+    className="route-page-loader flex min-h-[50vh] items-center justify-center"
     role="status"
     aria-live="polite"
   >

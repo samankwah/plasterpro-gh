@@ -289,7 +289,7 @@ const BlogList = () => {
   return (
     <div className="bg-gradient-to-b from-white to-slate-50 min-h-screen">
       {/* Enhanced Hero Section - Reduced Height & Gray Color */}
-      <section className="route-intro relative bg-gradient-to-br from-gray-300 via-gray-700 to-gray-900 text-white pb-[7.5rem] md:pb-32 overflow-hidden">
+      <section className="route-intro relative bg-gradient-to-br from-gray-300 via-gray-700 to-gray-900 text-white pb-10 md:pb-12 overflow-hidden">
         <div className="absolute inset-0">
           <div className="absolute top-10 left-10 w-64 h-64 bg-gray-600/20 rounded-full blur-3xl"></div>
           <div className="absolute bottom-10 right-10 w-64 h-64 bg-gray-500/20 rounded-full blur-3xl"></div>
